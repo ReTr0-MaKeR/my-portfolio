@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Tanvir Hassan - EEE Student Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ8u7X6bYpX5oO/Y7Y+fQ1B0xU9F6yR+4/mJt1z1n+K3M5Dk7+H9+B0z0zQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Custom CSS Variables and Styles -->
+    <style>
+        /* --- THEME VARIABLE --- */
+        /* Change the hex code below to instantly change the primary theme color everywhere */
+        :root {
+            --theme-main: #4F46E5; /* Purple/Indigo theme color */
+        }
+        
+        /* Optional: Smooth scrolling for navigation */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Hide scrollbar for aesthetics, but allow scrolling functionality */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        /* Custom transition for arrow visibility */
+        .scroll-arrow {
+            transition: opacity 0.3s;
+        }
+
+        /* --- MODAL FIX: Ensures clicks pass through when modal is hidden --- */
+        .is-modal-hidden {
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none; /* CRITICAL FIX: Stops invisible overlay from blocking clicks */
+        }
+        .is-modal-active {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+
+    <!-- Configure custom colors and font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': 'var(--theme-main)', /* Reads color from CSS variable */
+                        'secondary': '#1F2937', // Gray-800 for dark text/background
+                        'background': '#F9FAFB', // Light gray background
+                        'card': '#FFFFFF', // White cards
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-secondary font-sans antialiased">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-card shadow-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold text-primary">
+                Md. Tanvir Hassan
+            </div>
+            <div class="flex space-x-6">
+                <a href="#about" class="text-secondary hover:text-primary transition duration-300">About</a>
+                <a href="#skills" class="text-secondary hover:text-primary transition duration-300">Skills</a>
+                <a href="#experiences" class="text-secondary hover:text-primary transition duration-300">Experiences</a>
+                <a href="#projects" class="text-secondary hover:text-primary transition duration-300">Projects</a>
+                <a href="#achievements" class="text-secondary hover:text-primary transition duration-300">Achievements</a>
+                <a href="#contact" class="text-secondary hover:text-primary transition duration-300">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="hero" class="bg-card py-20 md:py-32 border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
+                <!-- Text Content -->
+                <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+                    <p class="text-lg text-primary font-semibold mb-2">Hello, I'm</p>
+                    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight text-secondary">
+                        Md. Tanvir Hassan
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-light text-gray-600 mt-2 mb-6">
+                        An Enthusiastic EEE Student & Innovator
+                    </h2>
+                    <p class="text-gray-700 max-w-lg mb-8">
+                        Fueled by a relentless passion for <strong>innovation</strong> and <strong>hands-on EEE projects</strong>. Currently focused on advanced <strong>circuit design</strong> and <strong>robotics</strong> solutions. Let's connect and build something great!
+                    </p>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="#projects" class="px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300">
+                            View My Work
+                        </a>
+                        <!-- CV Link added here -->
+                        <a href="https://drive.google.com/file/d/1ZFafeuHW7ucns4zA8Xrp83F_LWr-EQDE/view?usp=sharing" target="_blank" class="px-6 py-3 border border-primary text-primary font-semibold rounded-lg hover:bg-indigo-50 transition duration-300">
+                            Download CV
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Profile Image -->
+                <div class="md:w-1/3">
+                    <!-- Border is now border-primary and border-8 for prominence -->
+                    <img src="./assets/images/profile.png" onerror="this.onerror=null;this.src='https://placehold.co/400x400/4F46E5/FFFFFF?text=Md.+Tanvir+Hassan';" alt="Profile Picture of Md. Tanvir Hassan" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-xl border-8 border-primary mx-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. About Section -->
+        <section id="about" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-4 text-secondary">About Me</h2>
+                <p class="text-xl text-center text-gray-600 mb-12">
+                    My journey in Electrical and Electronic Engineering.
+                </p>
+
+                <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed space-y-6">
+                    <p>
+                        As an enthusiastic Electrical and Electronic Engineering (EEE) student, my academic journey is driven by a deep commitment to <strong>innovation</strong> and creating impactful, hands-on projects. This relentless pursuit of knowledge has allowed me to delve into complex challenges within the EEE field.
+                    </p>
+                    <p>
+                        Throughout my studies, I've garnered recognition for my achievements in <strong>science fairs</strong> and various <strong>robotics competitions</strong>. These experiences have been instrumental in developing and demonstrating key practical skills in <strong>circuit design</strong>, <strong>PCBs</strong>, and <strong>robotics</strong>.
+                    </p>
+                    <p>
+                        With each project completed, I have deepened my technical understanding, equipping me with the expertise necessary to tackle complex challenges and contribute meaningfully to the realm of Electrical and Electronic Engineering. I am committed to leveraging my skills and knowledge to make a significant impact.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 3. Skills Section -->
+        <section id="skills" class="bg-gray-100 py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-4 text-secondary">Technical Skills</h2>
+                <p class="text-xl text-center text-gray-600 mb-12">
+                    Core competencies in Electrical and Electronic Engineering.
+                </p>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 max-w-5xl mx-auto">
+                    <!-- Skill Card 1: Circuit Design -->
+                    <div class="flex flex-col items-center justify-center p-4 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                        <span class="text-4xl mb-2 text-primary">⚡</span>
+                        <p class="text-lg font-semibold text-center">Circuit Design</p>
+                    </div>
+                    <!-- Skill Card 2: PCB Layout -->
+                    <div class="flex flex-col items-center justify-center p-4 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                        <span class="text-4xl mb-2 text-primary">⚙️</span>
+                        <p class="text-lg font-semibold text-center">PCB Layout</p>
+                    </div>
+                    <!-- Skill Card 3: Robotics -->
+                    <div class="flex flex-col items-center justify-center p-4 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                        <span class="text-4xl mb-2 text-primary">🤖</span>
+                        <p class="text-lg font-semibold text-center">Robotics</p>
+                    </div>
+                    <!-- Skill Card 4: Embedded Systems -->
+                    <div class="flex flex-col items-center justify-center p-4 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                        <span class="text-4xl mb-2 text-primary">🧠</span>
+                        <p class="text-lg font-semibold text-center">Embedded Systems</p>
+                    </div>
+                    <!-- Skill Card 5: Programming (Microcontrollers) -->
+                    <div class="flex flex-col items-center justify-center p-4 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                        <span class="text-4xl mb-2 text-primary">💻</span>
+                        <p class="text-lg font-semibold text-center">C/C++ (MCU)</p>
+                    </div>
+                    <!-- Skill Card 6: Prototyping -->
+                    <div class="flex flex-col items-center justify-center p-4 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                        <span class="text-4xl mb-2 text-primary">🛠️</span>
+                        <p class="text-lg font-semibold text-center">Prototyping</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Experiences Section -->
+        <section id="experiences" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-4 text-secondary">Leadership & Volunteering</h2>
+                <p class="text-xl text-center text-gray-600 mb-12">
+                    My roles and contributions in organizing and leading technical communities.
+                </p>
+
+                <div class="max-w-4xl mx-auto space-y-8 relative">
+                    <!-- Vertical Line for Timeline Effect -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-300 hidden md:block"></div>
+
+                    <!-- Experience 1: President (2025) - Right Side Entry (Most Recent) -->
+                    <div class="relative flex flex-col md:flex-row justify-between items-center md:items-start w-full">
+                        <div class="w-full md:w-5/12 p-4 text-right">
+                            <h3 class="text-xl font-bold text-primary">President</h3>
+                            <p class="text-lg font-semibold text-secondary">DIU Robotics Club</p>
+                            <p class="text-sm text-gray-500">2025</p>
+                        </div>
+                        <div class="hidden md:block absolute left-1/2 top-4 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-md transform -translate-x-1/2"></div>
+                        <div class="w-full md:w-5/12 p-4 text-left">
+                            <p class="text-gray-700">Led strategic initiatives for the club, managing technical teams and overseeing successful participation in national and international competitions.</p>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2: Volunteer Organizer (2024) - Left Side Entry -->
+                    <div class="relative flex flex-col md:flex-row-reverse justify-between items-center md:items-start w-full">
+                        <div class="w-full md:w-5/12 p-4 text-left">
+                            <h3 class="text-xl font-bold text-primary">Volunteer Organizer</h3>
+                            <p class="text-lg font-semibold text-secondary">4th International Robotech Olympiad</p>
+                            <p class="text-sm text-gray-500">2024</p>
+                        </div>
+                        <div class="hidden md:block absolute left-1/2 top-4 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-md transform -translate-x-1/2"></div>
+                        <div class="w-full md:w-5/12 p-4 text-right md:text-left">
+                            <p class="text-gray-700">Successfully managed logistics and coordination for the event, ensuring a smooth competition experience for over [Specify Number] participants and judges.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience 3: Training Secretary (2024) - Right Side Entry -->
+                    <div class="relative flex flex-col md:flex-row justify-between items-center md:items-start w-full">
+                        <div class="w-full md:w-5/12 p-4 text-right">
+                            <h3 class="text-xl font-bold text-primary">Training Secretary</h3>
+                            <p class="text-lg font-semibold text-secondary">DIU Robotics Club</p>
+                            <p class="text-sm text-gray-500">2024</p>
+                        </div>
+                        <div class="hidden md:block absolute left-1/2 top-4 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-md transform -translate-x-1/2"></div>
+                        <div class="w-full md:w-5/12 p-4 text-left">
+                            <p class="text-gray-700">Managed and executed technical training sessions on embedded systems, circuit design, and programming, fostering practical skills among club members.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience 4: Ast. Training Secretary (2023) - Left Side Entry -->
+                    <div class="relative flex flex-col md:flex-row-reverse justify-between items-center md:items-start w-full">
+                        <div class="w-full md:w-5/12 p-4 text-left">
+                            <h3 class="text-xl font-bold text-primary">Assistant Training Secretary</h3>
+                            <p class="text-lg font-semibold text-secondary">DIU Robotics Club</p>
+                            <p class="text-sm text-gray-500">2023</p>
+                        </div>
+                        <div class="hidden md:block absolute left-1/2 top-4 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-md transform -translate-x-1/2"></div>
+                        <div class="w-full md:w-5/12 p-4 text-right md:text-left">
+                            <p class="text-gray-700">Supported the lead Training Secretary in developing curriculum and hosting workshops for new members focused on foundational robotics concepts.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 5. Projects Section (Scrollable Gallery with Dynamic Arrows) -->
+        <section id="projects" class="bg-gray-100 py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-4 text-secondary">Recent Projects</h2>
+                <p class="text-xl text-center text-gray-600 mb-12">
+                    Scroll left or right to view more of my technical work.
+                </p>
+
+                <!-- Project Carousel Wrapper (relative for absolute arrows) -->
+                <div class="relative">
+                    
+                    <!-- Left Arrow Button (Dynamic Visibility) -->
+                    <button id="leftArrow" onclick="scrollProjects(-1)" 
+                        class="scroll-arrow hidden md:block absolute -left-4 lg:-left-12 top-1/2 transform -translate-y-1/2 bg-white text-primary p-3 rounded-full shadow-lg z-10 hover:bg-gray-200 transition duration-300">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <!-- Scrollable Container (h-64 image height for portrait orientation) -->
+                    <div id="project-container" class="flex overflow-x-scroll snap-x snap-mandatory hide-scrollbar space-x-8 pb-4 px-4" onscroll="checkScrollPosition()">
+                        
+                        <!-- Project Card 1: DIU Dubo-Zan -->
+                        <div class="flex-shrink-0 w-80 md:w-96 snap-center bg-card rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                            <!-- Image height is h-64 -->
+                            <img src="./assets/images/projects/dubo.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1F2937/FFFFFF?text=DIU+Dubo-Zan';" alt="DIU Dubo-Zan" class="w-full h-64 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-2xl font-semibold mb-2 text-primary">DIU Dubo-Zan</h3>
+                                <p class="text-gray-700 mb-4 text-sm">
+                                    A high-performance robotics platform designed for competitive environments, showcasing advanced motor control and robust mechanical engineering.
+                                </p>
+                                <!-- Updated link to open modal -->
+                                <a href="#" onclick="showProjectDetails('project1'); return false;" class="text-primary hover:text-indigo-800 font-medium mr-4">Details &rarr;</a>
+                                <a href="[Project GitHub URL 1]" target="_blank" class="text-gray-600 hover:text-secondary font-medium">GitHub Code</a>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 2: LoRa based IoT Weather Balloon -->
+                        <div class="flex-shrink-0 w-80 md:w-96 snap-center bg-card rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                            <!-- Image height is h-64 -->
+                            <img src="./assets/images/projects/wb.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1F2937/FFFFFF?text=Weather+Balloon';" alt="LoRa based Iot Weather Ballon" class="w-full h-64 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-2xl font-semibold mb-2 text-primary">LoRa based IoT Weather Balloon</h3>
+                                <p class="text-gray-700 mb-4 text-sm">
+                                    This project sends a sensor payload high into the atmosphere to gather critical meteorological data using a low-power LoRa network.
+                                </p>
+                                <!-- Updated link to open modal -->
+                                <a href="#" onclick="showProjectDetails('project2'); return false;" class="text-primary hover:text-indigo-800 font-medium mr-4">Details &rarr;</a>
+                                <a href="[Project GitHub URL 2]" target="_blank" class="text-gray-600 hover:text-secondary font-medium">GitHub Code</a>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 3: Water Management System -->
+                        <div class="flex-shrink-0 w-80 md:w-96 snap-center bg-card rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                            <!-- Image height is h-64 -->
+                            <img src="./assets/images/projects/wms.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1F2937/FFFFFF?text=Water+Management';" alt="Water Management System Thumbnail" class="w-full h-64 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-2xl font-semibold mb-2 text-primary">Water Management System</h3>
+                                <p class="text-gray-700 mb-4 text-sm">
+                                    A comprehensive IoT solution for efficient water usage monitoring and automated control using soil moisture sensors and cloud data logging.
+                                </p>
+                                <!-- Updated link to open modal -->
+                                <a href="#" onclick="showProjectDetails('project3'); return false;" class="text-primary hover:text-indigo-800 font-medium mr-4">Details &rarr;</a>
+                                <a href="[Project GitHub URL 3]" target="_blank" class="text-gray-600 hover:text-secondary font-medium">GitHub Code</a>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 4: AC-DC SMPS -->
+                        <div class="flex-shrink-0 w-80 md:w-96 snap-center bg-card rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                            <!-- Image height is h-64 -->
+                            <img src="./assets/images/projects/smps.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1F2937/FFFFFF?text=AC-DC+SMPS';" alt="AC-DC SMPS Project Thumbnail" class="w-full h-64 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-2xl font-semibold mb-2 text-primary">AC-DC SMPS</h3>
+                                <p class="text-gray-700 mb-4 text-sm">
+                                    Designed and prototyped a high power density Switched-Mode Power Supply (SMPS) focusing on high conversion efficiency and compactness.
+                                </p>
+                                <!-- Updated link to open modal -->
+                                <a href="#" onclick="showProjectDetails('project4'); return false;" class="text-primary hover:text-indigo-800 font-medium mr-4">Details &rarr;</a>
+                                <a href="[Project GitHub URL 4]" target="_blank" class="text-gray-600 hover:text-secondary font-medium">GitHub Code</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Project Card 5: Advanced Line Follower -->
+                        <div class="flex-shrink-0 w-80 md:w-96 snap-center bg-card rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                            <!-- Image height is h-64 -->
+                            <img src="./assets/images/projects/lfr.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1F2937/FFFFFF?text=Line+Follower';" alt="Line Follower Project Thumbnail" class="w-full h-64 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-2xl font-semibold mb-2 text-primary">Advanced Line Follower</h3>
+                                <p class="text-gray-700 mb-4 text-sm">
+                                    Development of a high-speed line following robot using **PID control** algorithms for precise steering and rapid path correction on complex tracks.
+                                </p>
+                                <!-- Updated link to open modal -->
+                                <a href="#" onclick="showProjectDetails('project5'); return false;" class="text-primary hover:text-indigo-800 font-medium mr-4">Details &rarr;</a>
+                                <a href="[Project GitHub URL 5]" target="_blank" class="text-gray-600 hover:text-secondary font-medium">GitHub Code</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Project Card 6: SMD HotPlate -->
+                        <div class="flex-shrink-0 w-80 md:w-96 snap-center bg-card rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                            <!-- Image height is h-64 -->
+                            <img src="./assets/images/projects/hp.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1F2937/FFFFFF?text=SMD+HotPlate';" alt="SMD HotPlate Thumbnail" class="w-full h-64 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-2xl font-semibold mb-2 text-primary">SMD HotPlate</h3>
+                                <p class="text-gray-700 mb-4 text-sm">
+                                    A custom-built, temperature-controlled heating plate with a **PID loop** for professional, high-quality reflow soldering of Surface Mount Devices (SMD).
+                                </p>
+                                <!-- Updated link to open modal -->
+                                <a href="#" onclick="showProjectDetails('project6'); return false;" class="text-primary hover:text-indigo-800 font-medium mr-4">Details &rarr;</a>
+                                <a href="[Project GitHub URL 6]" target="_blank" class="text-gray-600 hover:text-secondary font-medium">GitHub Code</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <!-- Right Arrow Button (Dynamic Visibility) -->
+                    <button id="rightArrow" onclick="scrollProjects(1)" 
+                        class="scroll-arrow hidden md:block absolute -right-4 lg:-right-12 top-1/2 transform -translate-y-1/2 bg-white text-primary p-3 rounded-full shadow-lg z-10 hover:bg-gray-200 transition duration-300">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Achievements Section -->
+        <section id="achievements" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-4 text-secondary">Achievements & Recognition</h2>
+                <p class="text-xl text-center text-gray-600 mb-12">
+                    Showcasing my results in competitions and technical fairs.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+                    <!-- Achievement 1: Champion -->
+                    <div class="bg-card rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                        <!-- Image height is h-64 -->
+                        <img src="./assets/images/achievements/mie.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/4F46E5/FFFFFF?text=Champion+Trophy';" alt="Champion Trophy MIE Robolution" class="w-full h-64 object-cover">
+                        <div class="p-6 text-center">
+                            <h3 class="text-2xl font-bold mb-1 text-primary">Champion</h3>
+                            <p class="text-lg font-semibold text-secondary">Techathon Segment</p>
+                            <p class="text-gray-600">MIE Robolution 1.0 (2025)</p>
+                        </div>
+                    </div>
+
+                    <!-- Achievement 2: 1st Runner up -->
+                    <div class="bg-card rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                        <!-- Image height is h-64 -->
+                        <img src="./assets/images/achievements/iot.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/4F46E5/FFFFFF?text=1st+Runner+Up+Trophy';" alt="1st Runner up IOT Fest 2023" class="w-full h-64 object-cover">
+                        <div class="p-6 text-center">
+                            <h3 class="text-2xl font-bold mb-1 text-primary">1st Runner up</h3>
+                            <p class="text-lg font-semibold text-secondary">Project Showcasing Category</p>
+                            <p class="text-gray-600">IOT Fest 2023</p>
+                        </div>
+                    </div>
+
+                    <!-- Achievement 3: 2nd Runner up -->
+                    <div class="bg-card rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                        <!-- Image height is h-64 -->
+                        <img src="./assets/images/achievements/bim.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/4F46E5/FFFFFF?text=2nd+Runner+Up+Certificate';" alt="2nd Runner up BIM2023" class="w-full h-64 object-cover">
+                        <div class="p-6 text-center">
+                            <h3 class="text-2xl font-bold mb-1 text-primary">2nd Runner up</h3>
+                            <p class="text-lg font-semibold text-secondary">Product Design Category</p>
+                            <p class="text-gray-600">BIM2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Contact Section -->
+        <section id="contact" class="bg-primary py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-white text-center">
+                <h2 class="text-4xl font-bold mb-4">Get In Touch</h2>
+                <p class="text-xl mb-10 opacity-90">
+                    I'm currently seeking internships, research collaborations, and opportunities to apply my EEE skills. Let's discuss innovation!
+                </p>
+
+                <!-- Form uses JS to open mailto and WhatsApp links -->
+                <form id="contactForm" class="max-w-xl mx-auto space-y-4" onsubmit="handleContactSubmit(event)">
+                    <input type="text" id="senderName" name="name" placeholder="Your Name" required
+                           class="w-full p-3 rounded-lg text-secondary border-none focus:ring-2 focus:ring-white">
+                    <input type="email" id="senderEmail" name="email" placeholder="Your Email" required
+                           class="w-full p-3 rounded-lg text-secondary border-none focus:ring-2 focus:ring-white">
+                    <textarea id="messageContent" name="message" rows="5" placeholder="Your Message" required
+                              class="w-full p-3 rounded-lg text-secondary border-none focus:ring-2 focus:ring-white"></textarea>
+                    <button type="submit" class="w-full px-6 py-3 bg-white text-primary font-semibold rounded-lg shadow-xl hover:bg-gray-200 transition duration-300">
+                        Send Message
+                    </button>
+                </form>
+                
+                <!-- Status message to guide the user after clicking the button -->
+                <div id="statusMessage" class="mt-4 text-sm font-medium h-6"></div>
+
+                <div class="mt-12 flex justify-center space-x-8 text-xl">
+                    <!-- Social Links -->
+                    <a href="https://www.linkedin.com/in/tanvir10101" target="_blank" class="flex items-center space-x-2 hover:text-gray-300 transition duration-300 cursor-pointer" title="LinkedIn">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                        <span class="hidden sm:inline">LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/ReTr0-MaKeR" target="_blank" class="flex items-center space-x-2 hover:text-gray-300 transition duration-300 cursor-pointer" title="GitHub">
+                        <i class="fab fa-github fa-2x"></i>
+                        <span class="hidden sm:inline">GitHub</span>
+                    </a>
+                    <a href="mailto:tanvirhassan1201@gmail.com" class="flex items-center space-x-2 hover:text-gray-300 transition duration-300 cursor-pointer" title="Email">
+                        <i class="fas fa-envelope fa-2x"></i>
+                        <span class="hidden sm:inline">Email</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; <span id="year"></span> Md. Tanvir Hassan. All rights reserved. Built with Tailwind CSS.</p>
+        </div>
+    </footer>
+
+    <!-- 8. Project Details Modal (Hidden by default) -->
+    <div id="projectModal" class="fixed inset-0 bg-secondary bg-opacity-95 z-50 flex justify-center items-center transition-opacity duration-300 is-modal-hidden">
+        <div class="bg-card rounded-xl shadow-2xl w-11/12 max-w-4xl h-5/6 overflow-hidden relative">
+            
+            <!-- Close Button -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-secondary hover:text-primary transition duration-300 z-10 p-2">
+                <i class="fas fa-times fa-2x"></i>
+            </button>
+            
+            <!-- Modal Content (Scrollable) -->
+            <div id="modalContent" class="h-full overflow-y-auto hide-scrollbar">
+                <!-- Content will be injected here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // --- PROJECT DATA ---
+        // This object holds the detailed information for the modal pop-ups
+        const PROJECT_DATA = {
+            'project1': {
+                name: "DIU Dubo-Zan",
+                image: "./assets/images/projects/dubo.jpg", 
+                schematic: null, 
+                details: `This project is the culmination of competitive robotics efforts, serving as a versatile platform for various challenges faced in the DIU Robotics Club. It showcases advanced mechanical design, precise motor control, and modular electronic architecture to quickly adapt to contest rules. Dubo-Zan represents expertise in integrated hardware and software development under tight deadlines.`,
+                tech: ["Arduino/STM32", "SolidWorks (CAD)", "Motor Drivers (L298N/DRV8825)", "C++", "Mechatronics"],
+                keywords: ["Robotics Competition", "Mechatronics", "Motor Control", "CAD Design", "Microcontrollers"]
+            },
+            'project2': {
+                name: "LoRa based IoT Weather Balloon",
+                image: "./assets/images/projects/wb.jpg",
+                schematic: "./assets/images/projects/schematics/wb_schematic.jpg", 
+                details: `This groundbreaking project involves launching a custom sensor payload into the atmosphere to gather real-time meteorological data. The system utilizes a low-power, wide-area **LoRa network** for reliable long-distance communication back to the ground station. The primary goal is to collect live atmospheric profiles, including temperature, humidity, and barometric pressure at high altitudes, which is essential for climate modeling and atmospheric research. The entire payload was designed with energy efficiency and robustness in mind to withstand extreme conditions.`,
+                tech: ["LoRa Module (SX1278)", "Arduino/ESP32 Microcontroller", "BME280 Sensor (T/H/P)", "Custom PCB", "C++", "Wireless Communication"],
+                keywords: ["IoT", "LoRaWAN", "Atmospheric Sensing", "Telemetry", "Embedded C++", "High Altitude"]
+            },
+            'project3': {
+                name: "Water Management System",
+                image: "./assets/images/projects/wms.jpg", 
+                schematic: null,
+                details: `A comprehensive IoT solution designed for efficient water usage monitoring and control in agricultural or industrial settings. The system uses soil moisture sensors, ultrasonic distance sensors for tank levels, and electrically controlled valves, all managed by a central microcontroller. Data is transmitted via WiFi to a cloud dashboard, enabling users to optimize irrigation schedules and prevent waste.`,
+                tech: ["ESP8266/ESP32", "Moisture Sensors", "Ultrasonic Sensors", "Relay Drivers", "Cloud IoT (e.g., Adafruit IO)", "C/C++"],
+                keywords: ["IoT", "Agriculture Tech", "Sensor Networks", "Water Conservation", "Automation"]
+            },
+            'project4': {
+                name: "AC-DC SMPS",
+                image: "./assets/images/projects/smps.jpeg", 
+                schematic: null, 
+                details: `Designed and prototyped a Switched-Mode Power Supply (SMPS) to efficiently convert AC line voltage to a regulated DC output. The project focuses on high power density and minimizing power loss by selecting appropriate switching topologies and compensation circuits. Simulation (LTSpice) and hardware implementation were key to achieving a stable and compact power solution.`,
+                tech: ["SMPS Topologies", "MOSFETs", "PWM Controller", "Filter Design", "Isolation Techniques", "Power Electronics"],
+                keywords: ["Power Supply", "SMPS", "Switching Regulator", "Circuit Design", "Power Efficiency"]
+            },
+            'project5': {
+                name: "Advanced Line Follower",
+                image: "./assets/images/projects/lfr.jpg", 
+                schematic: null, 
+                details: `Development of a high-speed line following robot capable of navigating complex tracks using PID (Proportional-Integral-Derivative) control algorithms for precise steering and velocity control. The robot utilizes an array of IR sensors for line detection and advanced firmware to achieve rapid path correction and optimize competition speed.`,
+                tech: ["PID Control", "IR Sensor Array", "High-Speed Microcontroller (STM32)", "Motor Drivers", "C Programming", "Robotics"],
+                keywords: ["Robotics", "Control Systems", "PID", "Algorithm Design", "Embedded Systems"]
+            },
+            'project6': {
+                name: "SMD HotPlate",
+                image: "./assets/images/projects/hp.jpeg", 
+                schematic: null, 
+                details: `Built a temperature-controlled heating plate essential for reflowing Surface Mount Device (SMD) components onto PCBs. The system features a custom firmware PID loop to maintain a precise temperature profile, ensuring successful and uniform soldering of fine-pitch components. This tool significantly improves the quality and speed of PCB assembly for complex projects.`,
+                tech: ["PID Temperature Control", "Solid State Relay (SSR)", "Thermocouple (MAX6675)", "Microcontroller", "PCB Assembly", "Firmware"],
+                keywords: ["PCB Assembly", "SMD Soldering", "PID Control", "Custom Tools", "Electronics Manufacturing"]
+            },
+        };
+
+        // CONFIGURED CONTACT DETAILS
+        const OWNER_EMAIL = "tanvirhassan1201@gmail.com";
+        const OWNER_WHATSAPP = "8801878782806";
+
+        // --- Modal Functions ---
+        function showProjectDetails(id) {
+            const project = PROJECT_DATA[id];
+            const modal = document.getElementById('projectModal');
+            const content = document.getElementById('modalContent');
+            
+            if (!project) {
+                console.error("Project ID not found:", id);
+                return;
+            }
+
+            // Generate HTML for the modal content
+            content.innerHTML = `
+                <div class="p-6 sm:p-10">
+                    <div class="mb-6">
+                        <h2 class="text-4xl font-extrabold text-secondary mb-2">${project.name}</h2>
+                        <div class="text-gray-600">
+                            <span class="font-semibold">Technology Stack:</span> 
+                            ${project.tech.join(' | ')}
+                        </div>
+                    </div>
+                    
+                    <!-- Full Description & Image Section -->
+                    <h3 class="text-2xl font-bold text-primary mb-3">Elaborate Details</h3>
+                    
+                    <!-- Project Image (Limited width, full view, centered with caption) -->
+                    <figure class="my-8 max-w-xl mx-auto">
+                        <img src="${project.image}" onerror="this.onerror=null;this.src='https://placehold.co/800x400/1F2937/FFFFFF?text=Project+Image';" 
+                             alt="${project.name}" class="w-full h-auto object-contain rounded-lg shadow-lg border border-gray-300">
+                        <figcaption class="text-center text-sm text-gray-500 mt-2">Fig: Project Photo</figcaption>
+                    </figure>
+                    
+                    <p class="text-gray-700 leading-relaxed mb-8">${project.details}</p>
+
+                    <!-- Conditional Schematic Section -->
+                    ${project.schematic ? `
+                        <h3 class="text-2xl font-bold text-primary mb-3 mt-10">Project Schematic</h3>
+                        <figure class="my-8 max-w-2xl mx-auto">
+                            <img src="${project.schematic}" onerror="this.onerror=null;this.src='https://placehold.co/800x600/FF0000/FFFFFF?text=Schematic+Not+Found';" 
+                                 alt="${project.name} Schematic" class="w-full h-auto object-contain rounded-lg shadow-lg border border-gray-300">
+                            <figcaption class="text-center text-sm text-gray-500 mt-2">Fig: Schematic Diagram</figcaption>
+                        </figure>
+                    ` : ''}
+
+                    <!-- Key Terms & Technologies -->
+                    <h3 class="text-2xl font-bold text-primary mb-3 mt-10">Key Concepts</h3>
+                    <div class="flex flex-wrap gap-2">
+                        ${project.keywords.map(keyword => 
+                            `<span class="px-3 py-1 bg-gray-200 text-secondary text-sm font-medium rounded-full">${keyword}</span>`
+                        ).join('')}
+                    </div>
+
+                    <div class="mt-10 pt-6 border-t border-gray-200">
+                        <a href="[Project GitHub URL]" target="_blank" class="text-primary hover:text-indigo-800 font-medium text-lg">
+                            <i class="fab fa-github mr-2"></i> View Project Code on GitHub &rarr;
+                        </a>
+                    </div>
+                </div>
+            `;
+
+            // Show the modal
+            modal.classList.remove('is-modal-hidden');
+            modal.classList.add('is-modal-active');
+            
+            // Optionally prevent body scrolling when modal is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('is-modal-active');
+            modal.classList.add('is-modal-hidden'); // Apply hidden class
+            document.body.style.overflow = ''; // Restore body scrolling
+        }
+
+
+        // --- Contact Form Functionality ---
+        function handleContactSubmit(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('senderName').value;
+            const email = document.getElementById('senderEmail').value;
+            const message = document.getElementById('messageContent').value;
+            const statusMessage = document.getElementById('statusMessage');
+
+            // Set processing status
+            statusMessage.textContent = "Processing...";
+            statusMessage.classList.remove('text-red-300', 'text-green-300');
+
+
+            // 1. Construct Email (Mailto) Link
+            const emailSubject = encodeURIComponent(`Message from Portfolio Contact Form (Sender: ${name})`);
+            const emailBody = encodeURIComponent(`Sender Name: ${name}\nSender Email: ${email}\n\nMessage:\n${message}`);
+            const mailtoLink = `mailto:${OWNER_EMAIL}?subject=${emailSubject}&body=${emailBody}`;
+
+            // 2. Construct WhatsApp Link
+            const whatsappBody = `Hello Md. Tanvir Hassan,\nI saw your portfolio.\n\nFrom: ${name} (${email})\n\nMessage Preview:\n${message.substring(0, 100)}${message.length > 100 ? '...' : ''}`;
+            const whatsappText = encodeURIComponent(whatsappBody);
+            // Replace all non-numeric characters from the number for the wa.me link
+            const cleanWhatsappNumber = OWNER_WHATSAPP.replace(/[^0-9]/g, ''); 
+            const whatsappLink = `https://wa.me/${cleanWhatsappNumber}?text=${whatsappText}`;
+
+            try {
+                // Open both links in new tabs/windows
+                window.open(mailtoLink, '_blank');
+                window.open(whatsappLink, '_blank');
+
+                statusMessage.textContent = "✅ Success! Two new windows have opened: one for Email and one for WhatsApp. Please send your message from there.";
+                statusMessage.classList.remove('text-red-300');
+                statusMessage.classList.add('text-green-300');
+
+                // Clear form after successful attempt
+                document.getElementById('contactForm').reset();
+            } catch (error) {
+                console.error("Error opening contact links:", error);
+                statusMessage.textContent = "❌ Error: Could not open communication links. Check your pop-up blocker.";
+                statusMessage.classList.add('text-red-300');
+                statusMessage.classList.remove('text-green-300');
+            }
+        }
+        
+        // --- Project Scroll Functionality ---
+        const projectContainer = document.getElementById('project-container');
+        const leftArrow = document.getElementById('leftArrow');
+        const rightArrow = document.getElementById('rightArrow');
+
+        // Function to check and update arrow visibility
+        function checkScrollPosition() {
+            if (!projectContainer || !leftArrow || !rightArrow) return;
+            
+            const scrollLeft = projectContainer.scrollLeft;
+            // Calculate maximum scroll position (within a small tolerance for floating point errors)
+            const maxScroll = projectContainer.scrollWidth - projectContainer.clientWidth;
+            
+            // Hide left arrow if at the beginning
+            if (scrollLeft <= 5) { // Use a small tolerance like 5px
+                leftArrow.style.opacity = '0';
+                leftArrow.style.pointerEvents = 'none';
+            } else {
+                leftArrow.style.opacity = '1';
+                leftArrow.style.pointerEvents = 'auto';
+            }
+
+            // Hide right arrow if at the end (using Math.ceil for accurate comparison)
+            if (Math.ceil(scrollLeft) >= maxScroll - 5) { 
+                rightArrow.style.opacity = '0';
+                rightArrow.style.pointerEvents = 'none';
+            } else {
+                rightArrow.style.opacity = '1';
+                rightArrow.style.pointerEvents = 'auto';
+            }
+        }
+
+        function scrollProjects(direction) {
+            // Scroll by a calculated distance (approximately the width of one card + margin)
+            const scrollDistance = projectContainer.offsetWidth * 0.8; 
+            
+            projectContainer.scrollBy({
+                left: direction * scrollDistance,
+                behavior: 'smooth'
+            });
+            
+            // Check scroll position shortly after the scroll animation starts
+            setTimeout(checkScrollPosition, 300); 
+        }
+
+        // Event Listeners: Initialize check and attach scroll listener
+        if (projectContainer) {
+            // Initial check on load and resize
+            window.addEventListener('load', checkScrollPosition);
+            window.addEventListener('resize', checkScrollPosition);
+            
+            // Check visibility whenever the user scrolls the container manually
+            projectContainer.addEventListener('scroll', checkScrollPosition);
+        }
+    </script>
+</body>
+</html>
