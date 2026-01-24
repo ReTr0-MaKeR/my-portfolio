@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,19 @@
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ8u7X6bYpX5oO/Y7Y+fQ1B0xU9F6yR+4/mJt1z1n+K3M5Dk7+H9+B0z0zQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ8u7X6bYpX5oO/Y7Y+fQ1B0xU9F6yR+4/mJt1z1n+K3M5Dk7+H9+B0z0zQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Custom CSS Variables and Styles -->
     <style>
         /* --- THEME VARIABLE --- */
         /* Change the hex code below to instantly change the primary theme color everywhere */
         :root {
-            --theme-main: #4F46E5; /* Purple/Indigo theme color */
+            --theme-main: #4F46E5;
+            /* Purple/Indigo theme color */
         }
-        
+
         /* Optional: Smooth scrolling for navigation */
         html {
             scroll-behavior: smooth;
@@ -26,11 +30,14 @@
         .hide-scrollbar::-webkit-scrollbar {
             display: none;
         }
+
         .hide-scrollbar {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
         }
-        
+
         /* Custom transition for arrow visibility */
         .scroll-arrow {
             transition: opacity 0.3s;
@@ -40,8 +47,10 @@
         .is-modal-hidden {
             visibility: hidden;
             opacity: 0;
-            pointer-events: none; /* CRITICAL FIX: Stops invisible overlay from blocking clicks */
+            pointer-events: none;
+            /* CRITICAL FIX: Stops invisible overlay from blocking clicks */
         }
+
         .is-modal-active {
             visibility: visible;
             opacity: 1;
@@ -68,22 +77,31 @@
         }
     </script>
 </head>
+
 <body class="bg-background text-secondary font-sans antialiased">
 
     <!-- Navbar -->
     <header class="sticky top-0 z-50 bg-card shadow-md">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <div class="text-xl font-bold text-primary">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-wrap justify-between items-center">
+            <div class="text-xl font-bold text-primary mr-8">
                 Md. Tanvir Hassan
             </div>
-            <!-- Navigation links are kept compact and horizontal for all devices -->
-            <div class="flex space-x-3 sm:space-x-6 text-sm sm:text-base"> 
+            <!-- Navigation links - using flex-wrap for better responsiveness with more items -->
+            <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm sm:text-base items-center justify-end flex-grow">
                 <a href="#about" class="text-secondary hover:text-primary transition duration-300">About</a>
                 <a href="#skills" class="text-secondary hover:text-primary transition duration-300">Skills</a>
-                <a href="#experiences" class="text-secondary hover:text-primary transition duration-300 hidden sm:inline">Experiences</a>
+                <a href="#experiences"
+                    class="text-secondary hover:text-primary transition duration-300 hidden sm:inline">Experiences</a>
                 <a href="#projects" class="text-secondary hover:text-primary transition duration-300">Projects</a>
-                <a href="#achievements" class="text-secondary hover:text-primary transition duration-300 hidden sm:inline">Achievements</a>
-                <a href="#contact" class="text-secondary hover:text-primary transition duration-300">Contact</a>
+                <a href="#achievements"
+                    class="text-secondary hover:text-primary transition duration-300 hidden md:inline">Achievements</a>
+                <a href="#certifications"
+                    class="text-secondary hover:text-primary transition duration-300 hidden lg:inline">Certifications</a>
+                <a href="#publications"
+                    class="text-secondary hover:text-primary transition duration-300 hidden lg:inline">Research</a>
+                <a href="#gallery"
+                    class="text-secondary hover:text-primary transition duration-300 hidden lg:inline">Gallery</a>
+                <a href="#contact" class="text-secondary hover:text-primary transition duration-300 ml-2">Contact</a>
             </div>
         </nav>
     </header>
@@ -102,14 +120,19 @@
                         An Enthusiastic EEE Student & Innovator
                     </h2>
                     <p class="text-gray-700 max-w-lg mb-8 mx-auto md:mx-0">
-                        Fueled by a relentless passion for <strong>innovation</strong> and <strong>hands-on EEE projects</strong>. Currently focused on advanced <strong>circuit design</strong> and <strong>robotics</strong> solutions. Let's connect and build something great!
+                        Fueled by a relentless passion for <strong>innovation</strong> and <strong>hands-on EEE
+                            projects</strong>. Currently focused on advanced <strong>circuit design</strong> and
+                        <strong>robotics</strong> solutions. Let's connect and build something great!
                     </p>
                     <div class="flex justify-center md:justify-start space-x-4">
-                        <a href="#projects" class="px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300">
+                        <a href="#projects"
+                            class="px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300">
                             View My Work
                         </a>
                         <!-- CV Link added here -->
-                        <a href="https://drive.google.com/file/d/1hvdfxYEFFMJ0C0fUJj98PL2fS9B9ejbf/view?usp=sharing" target="_blank" class="px-6 py-3 border border-primary text-primary font-semibold rounded-lg hover:bg-indigo-50 transition duration-300">
+                        <a href="https://drive.google.com/file/d/1_AoZ-VcVDavqufcks2QOkQ_W8CBT7oN5/view?usp=sharing"
+                            target="_blank"
+                            class="px-6 py-3 border border-primary text-primary font-semibold rounded-lg hover:bg-indigo-50 transition duration-300">
                             Download CV
                         </a>
                     </div>
@@ -117,7 +140,10 @@
 
                 <!-- Profile Image -->
                 <div class="md:w-1/3">
-                    <img src="./assets/images/profile.png" onerror="this.onerror=null;this.src='https://placehold.co/400x400/4F46E5/FFFFFF?text=Md.+Tanvir+Hassan';" alt="Profile Picture of Md. Tanvir Hassan" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-xl border-8 border-primary mx-auto">
+                    <img src="./assets/images/profile.png"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x400/4F46E5/FFFFFF?text=Md.+Tanvir+Hassan';"
+                        alt="Profile Picture of Md. Tanvir Hassan"
+                        class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-xl border-8 border-primary mx-auto">
                 </div>
             </div>
         </section>
@@ -132,18 +158,27 @@
 
                 <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed space-y-6">
                     <p>
-                        As an enthusiastic Electrical and Electronic Engineering (EEE) student, my academic journey is driven by a deep commitment to <strong>innovation</strong> and creating impactful, hands-on projects. This relentless pursuit of knowledge has allowed me to delve into complex challenges within the EEE field.
+                        As an enthusiastic Electrical and Electronic Engineering (EEE) student, my academic journey is
+                        driven by a deep commitment to <strong>innovation</strong> and creating impactful, hands-on
+                        projects. This relentless pursuit of knowledge has allowed me to delve into complex challenges
+                        within the EEE field.
                     </p>
                     <p>
-                        Throughout my studies, I've garnered recognition for my achievements in <strong>science fairs</strong> and various <strong>robotics competitions</strong>. These experiences have been instrumental in developing and demonstrating key practical skills in <strong>circuit design</strong>, <strong>PCBs</strong>, and <strong>robotics</strong>.
+                        Throughout my studies, I've garnered recognition for my achievements in <strong>science
+                            fairs</strong> and various <strong>robotics competitions</strong>. These experiences have
+                        been instrumental in developing and demonstrating key practical skills in <strong>circuit
+                            design</strong>, <strong>PCBs</strong>, and <strong>robotics</strong>.
                     </p>
                     <p>
-                        With each project completed, I have deepened my technical understanding, equipping me with the expertise necessary to tackle complex challenges and contribute meaningfully to the realm of Electrical and Electronic Engineering. I am committed to leveraging my skills and knowledge to make a significant impact.
+                        With each project completed, I have deepened my technical understanding, equipping me with the
+                        expertise necessary to tackle complex challenges and contribute meaningfully to the realm of
+                        Electrical and Electronic Engineering. I am committed to leveraging my skills and knowledge to
+                        make a significant impact.
                     </p>
                 </div>
             </div>
         </section>
-        
+
         <!-- 3. Skills Section -->
         <section id="skills" class="bg-gray-100 py-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -154,110 +189,175 @@
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 max-w-5xl mx-auto">
                     <!-- Skill Card 1: Circuit Design -->
-                    <div class="flex flex-col items-center justify-center p-4 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div
+                        class="flex flex-col items-center justify-center p-4 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
                         <span class="text-4xl mb-2 text-primary">⚡</span>
                         <p class="text-lg font-semibold text-center">Circuit Design</p>
                     </div>
                     <!-- Skill Card 2: PCB Layout -->
-                    <div class="flex flex-col items-center justify-center p-4 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div
+                        class="flex flex-col items-center justify-center p-4 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
                         <span class="text-4xl mb-2 text-primary">⚙️</span>
-                        <p class="text-lg font-semibold text-center">PCB Design</p>
+                        <p class="text-lg font-semibold text-center">PCB Layout</p>
                     </div>
                     <!-- Skill Card 3: Robotics -->
-                    <div class="flex flex-col items-center justify-center p-4 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
-                        <span class="text-4xl mb-2 text-primary">🛠️</span>
-                        <p class="text-lg font-semibold text-center">Prototyping</p>
+                    <div
+                        class="flex flex-col items-center justify-center p-4 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                        <span class="text-4xl mb-2 text-primary">🤖</span>
+                        <p class="text-lg font-semibold text-center">Robotics</p>
                     </div>
                     <!-- Skill Card 4: Embedded Systems -->
-                    <div class="flex flex-col items-center justify-center p-4 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div
+                        class="flex flex-col items-center justify-center p-4 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
                         <span class="text-4xl mb-2 text-primary">🧠</span>
                         <p class="text-lg font-semibold text-center">Embedded Systems</p>
                     </div>
                     <!-- Skill Card 5: Programming (Microcontrollers) -->
-                    <div class="flex flex-col items-center justify-center p-4 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div
+                        class="flex flex-col items-center justify-center p-4 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
                         <span class="text-4xl mb-2 text-primary">💻</span>
                         <p class="text-lg font-semibold text-center">C/C++ (MCU)</p>
                     </div>
                     <!-- Skill Card 6: Prototyping -->
-                    <div class="flex flex-col items-center justify-center p-4 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
-                        <span class="text-4xl mb-2 text-primary">🤖</span>
-                        <p class="text-lg font-semibold text-center">Robotics</p>
+                    <div
+                        class="flex flex-col items-center justify-center p-4 bg-card rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                        <span class="text-4xl mb-2 text-primary">🛠️</span>
+                        <p class="text-lg font-semibold text-center">Prototyping</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. Experiences Section (Timeline Fix: text is now left-aligned on mobile) -->
+        <!-- 4. Experiences Section -->
         <section id="experiences" class="py-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-bold text-center mb-4 text-secondary">Leadership & Volunteering</h2>
-                <p class="text-xl text-center text-gray-600 mb-12">
-                    My roles and contributions in organizing and leading technical communities.
-                </p>
+                <h2 class="text-4xl font-bold text-center mb-12 text-secondary">Experience</h2>
 
+                <!-- Professional Experience Timeline -->
+                <div class="mb-20">
+                    <h3 class="text-2xl font-bold text-center mb-8 text-primary">Professional Experience</h3>
+                    <div class="max-w-4xl mx-auto space-y-8 relative">
+                        <!-- Vertical Line -->
+                        <div
+                            class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-300 hidden md:block">
+                        </div>
+
+                        <!-- Prof 1: Intern (Moved to Top) -->
+                        <div
+                            class="relative flex flex-col md:flex-row justify-between items-center md:items-start w-full">
+                            <div class="w-full md:w-5/12 p-4 text-left md:text-right">
+                                <h3 class="text-xl font-bold text-primary">Intern</h3>
+                                <p class="text-lg font-semibold text-secondary">Cybernatics Hi-Tech Solution Ltd</p>
+                                <p class="text-sm text-gray-500">2026 - Present</p>
+                            </div>
+                            <div
+                                class="hidden md:block absolute left-1/2 top-4 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-md transform -translate-x-1/2">
+                            </div>
+                            <div class="w-full md:w-5/12 p-4 text-left">
+                                <p class="text-gray-700">Contributing to R&D initiatives, assisting in the prototyping
+                                    and testing of advanced embedded system solutions.</p>
+                            </div>
+                        </div>
+
+                        <!-- Prof 2: Robotics Instructor -->
+                        <div
+                            class="relative flex flex-col md:flex-row-reverse justify-between items-center md:items-start w-full">
+                            <div class="w-full md:w-5/12 p-4 text-left">
+                                <h3 class="text-xl font-bold text-primary">Robotics Instructor</h3>
+                                <p class="text-lg font-semibold text-secondary">Learn and Grow</p>
+                                <p class="text-sm text-gray-500">2025 - Present</p>
+                            </div>
+                            <div
+                                class="hidden md:block absolute left-1/2 top-4 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-md transform -translate-x-1/2">
+                            </div>
+                            <div class="w-full md:w-5/12 p-4 text-left md:text-right">
+                                <p class="text-gray-700">Delivering hands-on robotics education, conducting workshops,
+                                    and mentoring students in circuit design and programming concepts.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leadership & Volunteering Timeline (Existing) -->
+            <div>
+                <h3 class="text-2xl font-bold text-center mb-8 text-primary">Leadership & Volunteering</h3>
                 <div class="max-w-4xl mx-auto space-y-8 relative">
-                    <!-- Vertical Line for Timeline Effect -->
-                    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-300 hidden md:block"></div>
+                    <!-- Vertical Line -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-300 hidden md:block">
+                    </div>
 
-                    <!-- Experience 1: President (2025) - Right Side Entry (Most Recent) -->
+                    <!-- Experience 1: President (2025) -->
                     <div class="relative flex flex-col md:flex-row justify-between items-center md:items-start w-full">
-                        <!-- Content Box 1: Left-aligned on mobile, Right-aligned on desktop -->
                         <div class="w-full md:w-5/12 p-4 text-left md:text-right">
                             <h3 class="text-xl font-bold text-primary">President</h3>
                             <p class="text-lg font-semibold text-secondary">DIU Robotics Club</p>
                             <p class="text-sm text-gray-500">2025</p>
                         </div>
-                        <div class="hidden md:block absolute left-1/2 top-4 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-md transform -translate-x-1/2"></div>
+                        <div
+                            class="hidden md:block absolute left-1/2 top-4 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-md transform -translate-x-1/2">
+                        </div>
                         <div class="w-full md:w-5/12 p-4 text-left">
-                            <p class="text-gray-700">Led strategic initiatives for the club, managing technical teams and overseeing successful participation in national and international competitions.</p>
+                            <p class="text-gray-700">Led strategic initiatives for the club, managing technical
+                                teams and overseeing successful participation in national and international
+                                competitions.</p>
                         </div>
                     </div>
 
-                    <!-- Experience 2: Volunteer Organizer (2024) - Left Side Entry -->
-                    <div class="relative flex flex-col md:flex-row-reverse justify-between items-center md:items-start w-full">
-                        <!-- Content Box 2: Defaults to Left-aligned on all screens -->
+                    <!-- Experience 2: Volunteer Organizer (2024) -->
+                    <div
+                        class="relative flex flex-col md:flex-row-reverse justify-between items-center md:items-start w-full">
                         <div class="w-full md:w-5/12 p-4 text-left">
                             <h3 class="text-xl font-bold text-primary">Volunteer Organizer</h3>
                             <p class="text-lg font-semibold text-secondary">4th International Robotech Olympiad</p>
                             <p class="text-sm text-gray-500">2024</p>
                         </div>
-                        <div class="hidden md:block absolute left-1/2 top-4 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-md transform -translate-x-1/2"></div>
-                        <!-- Description Box 2: Left-aligned on mobile, Right-aligned on desktop (for spacing) -->
+                        <div
+                            class="hidden md:block absolute left-1/2 top-4 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-md transform -translate-x-1/2">
+                        </div>
                         <div class="w-full md:w-5/12 p-4 text-left md:text-right">
-                            <p class="text-gray-700">Successfully managed logistics and coordination for the event, ensuring a smooth competition experience for over [Specify Number] participants and judges.</p>
+                            <p class="text-gray-700">Successfully managed logistics and coordination for the event,
+                                ensuring a smooth competition experience for over [Specify Number] participants and
+                                judges.</p>
                         </div>
                     </div>
-                    
-                    <!-- Experience 3: Training Secretary (2024) - Right Side Entry -->
+
+                    <!-- Experience 3: Training Secretary (2024) -->
                     <div class="relative flex flex-col md:flex-row justify-between items-center md:items-start w-full">
-                        <!-- Content Box 3: Left-aligned on mobile, Right-aligned on desktop -->
                         <div class="w-full md:w-5/12 p-4 text-left md:text-right">
                             <h3 class="text-xl font-bold text-primary">Training Secretary</h3>
                             <p class="text-lg font-semibold text-secondary">DIU Robotics Club</p>
                             <p class="text-sm text-gray-500">2024</p>
                         </div>
-                        <div class="hidden md:block absolute left-1/2 top-4 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-md transform -translate-x-1/2"></div>
+                        <div
+                            class="hidden md:block absolute left-1/2 top-4 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-md transform -translate-x-1/2">
+                        </div>
                         <div class="w-full md:w-5/12 p-4 text-left">
-                            <p class="text-gray-700">Managed and executed technical training sessions on embedded systems, circuit design, and programming, fostering practical skills among club members.</p>
+                            <p class="text-gray-700">Managed and executed technical training sessions on embedded
+                                systems, circuit design, and programming, fostering practical skills among club
+                                members.</p>
                         </div>
                     </div>
-                    
-                    <!-- Experience 4: Ast. Training Secretary (2023) - Left Side Entry -->
-                    <div class="relative flex flex-col md:flex-row-reverse justify-between items-center md:items-start w-full">
-                        <!-- Content Box 4: Defaults to Left-aligned on all screens -->
+
+                    <!-- Experience 4: Ast. Training Secretary (2023) -->
+                    <div
+                        class="relative flex flex-col md:flex-row-reverse justify-between items-center md:items-start w-full">
                         <div class="w-full md:w-5/12 p-4 text-left">
                             <h3 class="text-xl font-bold text-primary">Assistant Training Secretary</h3>
                             <p class="text-lg font-semibold text-secondary">DIU Robotics Club</p>
                             <p class="text-sm text-gray-500">2023</p>
                         </div>
-                        <div class="hidden md:block absolute left-1/2 top-4 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-md transform -translate-x-1/2"></div>
-                         <!-- Description Box 4: Left-aligned on mobile, Right-aligned on desktop (for spacing) -->
+                        <div
+                            class="hidden md:block absolute left-1/2 top-4 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-md transform -translate-x-1/2">
+                        </div>
                         <div class="w-full md:w-5/12 p-4 text-left md:text-right">
-                            <p class="text-gray-700">Supported the lead Training Secretary in developing curriculum and hosting workshops for new members focused on foundational robotics concepts.</p>
+                            <p class="text-gray-700">Supported the lead Training Secretary in developing curriculum
+                                and hosting workshops for new members focused on foundational robotics concepts.</p>
                         </div>
                     </div>
 
                 </div>
+            </div>
             </div>
         </section>
 
@@ -272,114 +372,28 @@
 
                 <!-- Project Carousel Wrapper (relative for absolute arrows) -->
                 <div class="relative">
-                    
+
                     <!-- Left Arrow Button (Dynamic Visibility) -->
-                    <button id="leftArrow" onclick="scrollProjects(-1)" 
+                    <button id="leftArrow" onclick="scrollProjects(-1)"
                         class="scroll-arrow hidden md:block absolute -left-4 lg:-left-12 top-1/2 transform -translate-y-1/2 bg-white text-primary p-3 rounded-full shadow-lg z-10 hover:bg-gray-200 transition duration-300">
                         <i class="fas fa-chevron-left"></i>
                     </button>
-                    
+
                     <!-- Scrollable Container (h-64 image height for portrait orientation) -->
-                    <div id="project-container" class="flex overflow-x-scroll snap-x snap-mandatory hide-scrollbar space-x-8 pb-4 px-4" onscroll="checkScrollPosition()">
-                        
-                        <!-- Project Card 1: DIU Dubo-Zan -->
-                        <div class="flex-shrink-0 w-80 md:w-96 snap-center bg-card rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
-                            <!-- Image height is h-64 -->
-                            <img src="./assets/images/projects/dubo.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1F2937/FFFFFF?text=DIU+Dubo-Zan';" alt="DIU Dubo-Zan" class="w-full h-64 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-2xl font-semibold mb-2 text-primary">DIU Dubo-Zan</h3>
-                                <p class="text-gray-700 mb-4 text-sm">
-                                    A high-performance robotics platform designed for competitive environments, showcasing advanced motor control and robust mechanical engineering.
-                                </p>
-                                <!-- Updated link to open modal -->
-                                <a href="#" onclick="showProjectDetails('project1'); return false;" class="text-primary hover:text-indigo-800 font-medium mr-4"><Details></Details></a>
-                               
-                            </div>
-                        </div>
 
-                        <!-- Project Card 2: LoRa based IoT Weather Balloon -->
-                        <div class="flex-shrink-0 w-80 md:w-96 snap-center bg-card rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
-                            <!-- Image height is h-64 -->
-                            <img src="./assets/images/projects/wb.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1F2937/FFFFFF?text=Weather+Balloon';" alt="LoRa based Iot Weather Ballon" class="w-full h-64 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-2xl font-semibold mb-2 text-primary">LoRa Based Weather Balloon</h3>
-                                <p class="text-gray-700 mb-4 text-sm">
-                                    This project sends a sensor payload high into the atmosphere to gather critical meteorological data using a low-power LoRa network.
-                                </p>
-                                <!-- Updated link to open modal -->
-                                <a href="#" onclick="showProjectDetails('project2'); return false;" class="text-primary hover:text-indigo-800 font-medium mr-4"><Details></Details></a>
-                                
-                            </div>
-                        </div>
-
-                        <!-- Project Card 3: Water Management System -->
-                        <div class="flex-shrink-0 w-80 md:w-96 snap-center bg-card rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
-                            <!-- Image height is h-64 -->
-                            <img src="./assets/images/projects/wms.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1F2937/FFFFFF?text=Water+Management';" alt="Water Management System Thumbnail" class="w-full h-64 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-2xl font-semibold mb-2 text-primary">Water Management System</h3>
-                                <p class="text-gray-700 mb-4 text-sm">
-                                    A comprehensive IoT solution for efficient water usage monitoring and automated control using soil moisture sensors and cloud data logging.
-                                </p>
-                                <!-- Updated link to open modal -->
-                                <a href="#" onclick="showProjectDetails('project3'); return false;" class="text-primary hover:text-indigo-800 font-medium mr-4"><Details></Details></a>
-                               
-                            </div>
-                        </div>
-
-                        <!-- Project Card 4: AC-DC SMPS -->
-                        <div class="flex-shrink-0 w-80 md:w-96 snap-center bg-card rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
-                            <!-- Image height is h-64 -->
-                            <img src="./assets/images/projects/smps.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1F2937/FFFFFF?text=AC-DC+SMPS';" alt="AC-DC SMPS Project Thumbnail" class="w-full h-64 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-2xl font-semibold mb-2 text-primary">AC-DC SMPS</h3>
-                                <p class="text-gray-700 mb-4 text-sm">
-                                    Designed and prototyped a high power density Switched-Mode Power Supply (SMPS) focusing on high conversion efficiency and compactness.
-                                </p>
-                                <!-- Updated link to open modal -->
-                                <a href="#" onclick="showProjectDetails('project4'); return false;" class="text-primary hover:text-indigo-800 font-medium mr-4"><Details></Details></a>
-                                
-                            </div>
-                        </div>
-                        
-                        <!-- Project Card 5: Advanced Line Follower -->
-                        <div class="flex-shrink-0 w-80 md:w-96 snap-center bg-card rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
-                            <!-- Image height is h-64 -->
-                            <img src="./assets/images/projects/lfr.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1F2937/FFFFFF?text=Line+Follower';" alt="Line Follower Project Thumbnail" class="w-full h-64 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-2xl font-semibold mb-2 text-primary">Advanced Line Follower</h3>
-                                <p class="text-gray-700 mb-4 text-sm">
-                                    Development of a high-speed line following robot using **PID control** algorithms for precise steering and rapid path correction on complex tracks.
-                                </p>
-                                <!-- Updated link to open modal -->
-                                <a href="#" onclick="showProjectDetails('project5'); return false;" class="text-primary hover:text-indigo-800 font-medium mr-4"><Details></Details></a>
-                                
-                            </div>
-                        </div>
-                        
-                        <!-- Project Card 6: SMD HotPlate -->
-                        <div class="flex-shrink-0 w-80 md:w-96 snap-center bg-card rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
-                            <!-- Image height is h-64 -->
-                            <img src="./assets/images/projects/hp.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1F2937/FFFFFF?text=SMD+HotPlate';" alt="SMD HotPlate Thumbnail" class="w-full h-64 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-2xl font-semibold mb-2 text-primary">SMD HotPlate</h3>
-                                <p class="text-gray-700 mb-4 text-sm">
-                                    A custom-built, temperature-controlled heating plate with a **PID loop** for professional, high-quality reflow soldering of Surface Mount Devices (SMD).
-                                </p>
-                                <!-- Updated link to open modal -->
-                                <a href="#" onclick="showProjectDetails('project6'); return false;" class="text-primary hover:text-indigo-800 font-medium mr-4"><Details></Details></a>
-                               
-                            </div>
-                        </div>
-                        
+                    <div id="project-container"
+                        class="flex overflow-x-scroll snap-x snap-mandatory hide-scrollbar space-x-8 pb-4 px-4"
+                        onscroll="checkScrollPosition()">
+                        <!-- Content injected by JS -->
                     </div>
 
+
                     <!-- Right Arrow Button (Dynamic Visibility) -->
-                    <button id="rightArrow" onclick="scrollProjects(1)" 
+                    <button id="rightArrow" onclick="scrollProjects(1)"
                         class="scroll-arrow hidden md:block absolute -right-4 lg:-right-12 top-1/2 transform -translate-y-1/2 bg-white text-primary p-3 rounded-full shadow-lg z-10 hover:bg-gray-200 transition duration-300">
                         <i class="fas fa-chevron-right"></i>
                     </button>
-                    
+
                 </div>
             </div>
         </section>
@@ -392,78 +406,129 @@
                     Showcasing my results in competitions and technical fairs.
                 </p>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-                    <!-- Achievement 1: Champion -->
-                    <div class="bg-card rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
-                        <!-- Image height is h-64 -->
-                        <img src="./assets/images/achievements/mie.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/4F46E5/FFFFFF?text=Champion+Trophy';" alt="Champion Trophy MIE Robolution" class="w-full h-64 object-cover">
-                        <div class="p-6 text-center">
-                            <h3 class="text-2xl font-bold mb-1 text-primary">Champion</h3>
-                            <p class="text-lg font-semibold text-secondary">Techathon Segment</p>
-                            <p class="text-gray-600">MIE Robolution 1.0 (2025)</p>
-                        </div>
+                <div class="relative">
+
+                    <!-- Left Arrow Button (Dynamic Visibility) -->
+                    <button id="achLeftArrow" onclick="scrollAchievements(-1)"
+                        class="scroll-arrow hidden md:block absolute -left-4 lg:-left-12 top-1/2 transform -translate-y-1/2 bg-white text-primary p-3 rounded-full shadow-lg z-10 hover:bg-gray-200 transition duration-300">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+
+                    <!-- Scrollable Container -->
+                    <div id="achievement-container"
+                        class="flex overflow-x-scroll snap-x snap-mandatory hide-scrollbar space-x-8 pb-4 px-4"
+                        onscroll="checkAchScrollPosition()">
+                        <!-- Content injected by JS -->
                     </div>
 
-                    <!-- Achievement 2: 1st Runner up -->
-                    <div class="bg-card rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
-                        <!-- Image height is h-64 -->
-                        <img src="./assets/images/achievements/iot.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/4F46E5/FFFFFF?text=1st+Runner+Up+Trophy';" alt="1st Runner up IOT Fest 2023" class="w-full h-64 object-cover">
-                        <div class="p-6 text-center">
-                            <h3 class="text-2xl font-bold mb-1 text-primary">1st Runner up</h3>
-                            <p class="text-lg font-semibold text-secondary">Project Showcasing Category</p>
-                            <p class="text-gray-600">IOT Fest 2023</p>
-                        </div>
-                    </div>
+                    <!-- Right Arrow Button (Dynamic Visibility) -->
+                    <button id="achRightArrow" onclick="scrollAchievements(1)"
+                        class="scroll-arrow hidden md:block absolute -right-4 lg:-right-12 top-1/2 transform -translate-y-1/2 bg-white text-primary p-3 rounded-full shadow-lg z-10 hover:bg-gray-200 transition duration-300">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
 
-                    <!-- Achievement 3: 2nd Runner up -->
-                    <div class="bg-card rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
-                        <!-- Image height is h-64 -->
-                        <img src="./assets/images/achievements/bim.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/4F46E5/FFFFFF?text=2nd+Runner+Up+Certificate';" alt="2nd Runner up BIM2023" class="w-full h-64 object-cover">
-                        <div class="p-6 text-center">
-                            <h3 class="text-2xl font-bold mb-1 text-primary">2nd Runner up</h3>
-                            <p class="text-lg font-semibold text-secondary">Product Design Category</p>
-                            <p class="text-gray-600">BIM2023</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 7. Contact Section -->
+        <!-- 7. Certifications & Training Section -->
+        <section id="certifications" class="bg-gray-100 py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-4 text-secondary">Certifications & Training</h2>
+                <p class="text-xl text-center text-gray-600 mb-12">
+                    Professional development and specialized courses.
+                </p>
+
+                <!-- Certification Grid -->
+                <div id="certification-container"
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                    <!-- Content injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Research & Publications Section -->
+        <section id="publications" class="py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-4 text-secondary">Research & Publications</h2>
+                <p class="text-xl text-center text-gray-600 mb-12">
+                    Academic contributions and conference papers.
+                </p>
+
+                <!-- Publications List -->
+                <div id="publication-container" class="space-y-6">
+                    <!-- Content injected by JS -->
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- 9. Gallery Section -->
+        <section id="gallery" class="py-20 bg-gray-50 border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-indigo-600">
+                            Gallery
+                        </span>
+                    </h2>
+                    <p class="text-lg text-secondary max-w-2xl mx-auto">
+                        Glimpses from workshops, conferences, competitions, and technical sessions.
+                    </p>
+                </div>
+
+                <div id="gallery-container"
+                    class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scroll-smooth hide-scrollbar px-1">
+                    <!-- Gallery Items Injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Contact Section -->
         <section id="contact" class="bg-primary py-20">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-white text-center">
                 <h2 class="text-4xl font-bold mb-4">Get In Touch</h2>
                 <p class="text-xl mb-10 opacity-90">
-                    I'm currently seeking internships, research collaborations, and opportunities to apply my EEE skills. Let's discuss innovation!
+                    I'm currently seeking Ph.D. or Master's opportunities, research collaborations, and opportunities to
+                    apply my EEE
+                    skills. Let's discuss innovation!
                 </p>
 
                 <!-- Form uses JS to open mailto and WhatsApp links -->
                 <form id="contactForm" class="max-w-xl mx-auto space-y-4" onsubmit="handleContactSubmit(event)">
                     <input type="text" id="senderName" name="name" placeholder="Your Name" required
-                           class="w-full p-3 rounded-lg text-secondary border-none focus:ring-2 focus:ring-white">
+                        class="w-full p-3 rounded-lg text-secondary border-none focus:ring-2 focus:ring-white">
                     <input type="email" id="senderEmail" name="email" placeholder="Your Email" required
-                           class="w-full p-3 rounded-lg text-secondary border-none focus:ring-2 focus:ring-white">
+                        class="w-full p-3 rounded-lg text-secondary border-none focus:ring-2 focus:ring-white">
                     <textarea id="messageContent" name="message" rows="5" placeholder="Your Message" required
-                              class="w-full p-3 rounded-lg text-secondary border-none focus:ring-2 focus:ring-white"></textarea>
-                    <button type="submit" class="w-full px-6 py-3 bg-white text-primary font-semibold rounded-lg shadow-xl hover:bg-gray-200 transition duration-300">
+                        class="w-full p-3 rounded-lg text-secondary border-none focus:ring-2 focus:ring-white"></textarea>
+                    <button type="submit"
+                        class="w-full px-6 py-3 bg-white text-primary font-semibold rounded-lg shadow-xl hover:bg-gray-200 transition duration-300">
                         Send Message
                     </button>
                 </form>
-                
+
                 <!-- Status message to guide the user after clicking the button -->
                 <div id="statusMessage" class="mt-4 text-sm font-medium h-6"></div>
 
                 <div class="mt-12 flex justify-center space-x-8 text-xl">
                     <!-- Social Links -->
-                    <a href="https://www.linkedin.com/in/tanvir10101" target="_blank" class="flex items-center space-x-2 hover:text-gray-300 transition duration-300 cursor-pointer" title="LinkedIn">
+                    <a href="https://www.linkedin.com/in/tanvir10101" target="_blank"
+                        class="flex items-center space-x-2 hover:text-gray-300 transition duration-300 cursor-pointer"
+                        title="LinkedIn">
                         <i class="fab fa-linkedin fa-2x"></i>
                         <span class="hidden sm:inline">LinkedIn</span>
                     </a>
-                    <a href="https://github.com/ReTr0-MaKeR" target="_blank" class="flex items-center space-x-2 hover:text-gray-300 transition duration-300 cursor-pointer" title="GitHub">
+                    <a href="https://github.com/ReTr0-MaKeR" target="_blank"
+                        class="flex items-center space-x-2 hover:text-gray-300 transition duration-300 cursor-pointer"
+                        title="GitHub">
                         <i class="fab fa-github fa-2x"></i>
                         <span class="hidden sm:inline">GitHub</span>
                     </a>
-                    <a href="mailto:tanvirhassan1201@gmail.com" class="flex items-center space-x-2 hover:text-gray-300 transition duration-300 cursor-pointer" title="Email">
+                    <a href="mailto:tanvirhassan1201@gmail.com"
+                        class="flex items-center space-x-2 hover:text-gray-300 transition duration-300 cursor-pointer"
+                        title="Email">
                         <i class="fas fa-envelope fa-2x"></i>
                         <span class="hidden sm:inline">Email</span>
                     </a>
@@ -479,15 +544,17 @@
         </div>
     </footer>
 
-    <!-- 8. Project Details Modal (Hidden by default) -->
-    <div id="projectModal" class="fixed inset-0 bg-secondary bg-opacity-95 z-50 flex justify-center items-center transition-opacity duration-300 is-modal-hidden">
+    <!-- 10. Project Details Modal (Hidden by default) -->
+    <div id="projectModal"
+        class="fixed inset-0 bg-secondary bg-opacity-95 z-50 flex justify-center items-center transition-opacity duration-300 is-modal-hidden">
         <div class="bg-card rounded-xl shadow-2xl w-11/12 max-w-4xl h-5/6 overflow-hidden relative">
-            
+
             <!-- Close Button -->
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-secondary hover:text-primary transition duration-300 z-10 p-2">
+            <button onclick="closeModal()"
+                class="absolute top-4 right-4 text-secondary hover:text-primary transition duration-300 z-10 p-2">
                 <i class="fas fa-times fa-2x"></i>
             </button>
-            
+
             <!-- Modal Content (Scrollable) -->
             <div id="modalContent" class="h-full overflow-y-auto hide-scrollbar">
                 <!-- Content will be injected here by JavaScript -->
@@ -496,144 +563,461 @@
     </div>
 
 
+    <!-- 11. Image Viewer Modal -->
+    <div id="imageModal"
+        class="fixed inset-0 bg-secondary bg-opacity-95 z-50 flex justify-center items-center transition-opacity duration-300 is-modal-hidden">
+        <div class="relative max-w-5xl max-h-screen p-4 flex flex-col items-center justify-center focus:outline-none"
+            tabindex="-1">
+            <button onclick="closeImageModal()"
+                class="absolute top-4 right-4 text-gray-900 hover:text-red-600 transition duration-300 p-2 z-[60] bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg border border-gray-200">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="modalImage" src="" alt="Certificate"
+                class="max-w-full max-h-[85vh] rounded-lg shadow-2xl object-contain bg-white">
+            <p id="modalCaption" class="text-white text-center mt-4 text-lg font-semibold drop-shadow-md"></p>
+        </div>
+    </div>
+
+
     <!-- JavaScript -->
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // --- PROJECT DATA ---
-        // This object holds the detailed information for the modal pop-ups
-        const PROJECT_DATA = {
-            'project1': {
+        // --- DATA STRUCTURES ---
+
+        const PROJECT_DATA = [
+            {
+                id: 'project1',
                 name: "DIU Dubo-Zan",
-                image: "./assets/images/projects/dubo.jpg", 
-                schematic: null, 
-                details: `This project is the culmination of competitive robotics efforts, serving as a versatile platform for various challenges faced in the DIU Robotics Club. It showcases advanced mechanical design, precise motor control, and modular electronic architecture to quickly adapt to contest rules. Dubo-Zan represents expertise in integrated hardware and software development under tight deadlines.`,
-                tech: ["Arduino/STM32", "SolidWorks (CAD)", "Motor Drivers (L298N/DRV8825)", "C++", "Mechatronics"],
-                keywords: ["Robotics Competition", "Mechatronics", "Motor Control", "CAD Design", "Microcontrollers"]
+                shortDescription: "A flagship underwater robotics (ROV/AUV) platform featuring Raspberry Pi compute and high-power propulsion, designed for international competition standards.",
+                image: "./assets/images/projects/dubo.jpg",
+                schematic: null,
+                details: `As the Founding Lead member of this flagship project, I spearheaded the development of DIU's first sophisticated underwater robotics platform. I modeled the entire vehicle in <b>Autodesk Fusion 360</b> to ensure hydrodynamic efficiency and mechanical integrity. I was responsible for planning the entire electronics and computing stack, utilizing a <b>Raspberry Pi</b> for high-level processing and 40A ESCs to manage high-torque underwater thrusters. The project is currently under constant development with the mission of representing DIU on the international stage in underwater robotics competitions.`,
+                tech: ["Raspberry Pi", "Fusion 360 (CAD)", "40A ESCs", "Underwater Thrusters", "Python/C++", "Power Systems"],
+                keywords: ["Underwater Robotics", "AUV", "ROV", "Founding Lead", "Marine Engineering", "Raspberry Pi"],
+                github: "#",
+                role: "Founding Project Lead"
             },
-            'project2': {
+            {
+                id: 'project2',
                 name: "LoRa based IoT Weather Balloon",
+                shortDescription: "A high-altitude sensor payload designed to gather meteorological data using long-range LoRa telemetry.",
                 image: "./assets/images/projects/wb.jpg",
-                schematic: "./assets/images/projects/schematics/wb_schematic.jpg", 
-                details: `This groundbreaking project involves launching a custom sensor payload into the atmosphere to gather real-time meteorological data. The system utilizes a low-power, wide-area **LoRa network** for reliable long-distance communication back to the ground station. The primary goal is to collect live atmospheric profiles, including temperature, humidity, and barometric pressure at high altitudes, which is essential for climate modeling and atmospheric research. The entire payload was designed with energy efficiency and robustness in mind to withstand extreme conditions.`,
-                tech: ["LoRa Module (SX1278)", "Arduino/ESP32 Microcontroller", "BME280 Sensor (T/H/P)", "Custom PCB", "C++", "Wireless Communication"],
-                keywords: ["IoT", "LoRaWAN", "Atmospheric Sensing", "Telemetry", "Embedded C++", "High Altitude"]
+                schematic: "./assets/images/projects/schematics/wb_schematic.jpg",
+                details: `Serving as the <b>Hardware Lead and Firmware Developer</b>, I designed and implemented a custom sensor payload for high-altitude atmospheric research. The system utilizes a low-power <b>LoRa network</b> to transmit real-time telemetry (temperature, humidity, and barometric pressure) back to a ground station from extreme altitudes. In addition to the technical development, I was the <b>primary author</b> of the research paper detailing the system's architecture and the environmental data profiles collected during flight, contributing to local expertise in climate modeling and telemetry systems.`,
+                tech: ["LoRa (SX1278)", "ESP32/Arduino", "BME280 Sensor", "Custom PCB Design", "Embedded C++", "Research Writing"],
+                keywords: ["IoT", "LoRaWAN", "Atmospheric Sensing", "Telemetry", "Primary Author", "Embedded Systems"],
+                github: "#",
+                role: "Hardware Lead, Firmware Developer & Primary Author"
             },
-            'project3': {
+            {
+                id: 'project3',
                 name: "Water Management System",
-                image: "./assets/images/projects/wms.jpg", 
+                shortDescription: "A comprehensive IoT solution for efficient water usage monitoring and automated control using soil moisture sensors and cloud data logging.",
+                image: "./assets/images/projects/wms.jpg",
                 schematic: null,
                 details: `A comprehensive IoT solution designed for efficient water usage monitoring and control in agricultural or industrial settings. The system uses soil moisture sensors, ultrasonic distance sensors for tank levels, and electrically controlled valves, all managed by a central microcontroller. Data is transmitted via WiFi to a cloud dashboard, enabling users to optimize irrigation schedules and prevent waste.`,
-                tech: ["ESP8266/ESP32", "Moisture Sensors", "Ultrasonic Sensors", "Relay Drivers", "Cloud IoT (e.g., Adafruit IO)", "C/C++"],
-                keywords: ["IoT", "Agriculture Tech", "Sensor Networks", "Water Conservation", "Automation"]
+                tech: ["ESP32-S3", "Moisture Sensors", "Ultrasonic Sensors", "Relay Drivers", "WiFi", "C/C++"],
+                keywords: ["IoT", "Agriculture Tech", "Sensor Networks", "Water Conservation", "Automation"],
+                github: "#",
+                role: "Hardware Engineer"
             },
-            'project4': {
+            {
+                id: 'project4',
                 name: "AC-DC SMPS",
-                image: "./assets/images/projects/smps.jpeg", 
-                schematic: null, 
+                shortDescription: "Designed and prototyped a high power density Switched-Mode Power Supply (SMPS) focusing on high conversion efficiency and compactness.",
+                image: "./assets/images/projects/smps.jpeg",
+                schematic: null,
                 details: `Designed and prototyped a Switched-Mode Power Supply (SMPS) to efficiently convert AC line voltage to a regulated DC output. The project focuses on high power density and minimizing power loss by selecting appropriate switching topologies and compensation circuits. Simulation (LTSpice) and hardware implementation were key to achieving a stable and compact power solution.`,
                 tech: ["SMPS Topologies", "MOSFETs", "PWM Controller", "Filter Design", "Isolation Techniques", "Power Electronics"],
-                keywords: ["Power Supply", "SMPS", "Switching Regulator", "Circuit Design", "Power Efficiency"]
+                keywords: ["Power Supply", "SMPS", "Switching Regulator", "Circuit Design", "Power Efficiency"],
+                github: "#",
+                role: "Circuit Designer"
             },
-            'project5': {
+            {
+                id: 'project5',
                 name: "Advanced Line Follower",
-                image: "./assets/images/projects/lfr.jpg", 
-                schematic: null, 
+                shortDescription: "Development of a high-speed line following robot using <b>PID control</b> algorithms for precise steering and rapid path correction on complex tracks.",
+                image: "./assets/images/projects/lfr.jpg",
+                schematic: null,
                 details: `Development of a high-speed line following robot capable of navigating complex tracks using PID (Proportional-Integral-Derivative) control algorithms for precise steering and velocity control. The robot utilizes an array of IR sensors for line detection and advanced firmware to achieve rapid path correction and optimize competition speed.`,
                 tech: ["PID Control", "IR Sensor Array", "High-Speed Microcontroller (STM32)", "Motor Drivers", "C Programming", "Robotics"],
-                keywords: ["Robotics", "Control Systems", "PID", "Algorithm Design", "Embedded Systems"]
+                keywords: ["Robotics", "Control Systems", "PID", "Algorithm Design", "Embedded Systems"],
+                github: "#",
+                role: "Firmware Engineer"
             },
-            'project6': {
+            {
+                id: 'project6',
                 name: "SMD HotPlate",
-                image: "./assets/images/projects/hp.jpeg", 
-                schematic: null, 
+                shortDescription: "A custom-built, temperature-controlled heating plate with a <b>PID loop</b> for professional, high-quality reflow soldering of Surface Mount Devices (SMD).",
+                image: "./assets/images/projects/hp.jpeg",
+                schematic: null,
                 details: `Built a temperature-controlled heating plate essential for reflowing Surface Mount Device (SMD) components onto PCBs. The system features a custom firmware PID loop to maintain a precise temperature profile, ensuring successful and uniform soldering of fine-pitch components. This tool significantly improves the quality and speed of PCB assembly for complex projects.`,
                 tech: ["PID Temperature Control", "Solid State Relay (SSR)", "Thermocouple (MAX6675)", "Microcontroller", "PCB Assembly", "Firmware"],
-                keywords: ["PCB Assembly", "SMD Soldering", "PID Control", "Custom Tools", "Electronics Manufacturing"]
-            },
-        };
+                keywords: ["PCB Assembly", "SMD Soldering", "PID Control", "Custom Tools", "Electronics Manufacturing"],
+                github: "#",
+                role: "Project Lead"
+            }
+        ];
 
-        // CONFIGURED CONTACT DETAILS
+        const ACHIEVEMENT_DATA = [
+            {
+                title: "Champion",
+                segment: "IoTrix Segment",
+                event: "ETE Televerse",
+                image: "./assets/images/achievements/ete.jpeg"
+            },
+            {
+                title: "Champion",
+                segment: "Techathon Segment",
+                event: "MIE Robolution 1.0 (2025)",
+                image: "./assets/images/achievements/mie.jpeg"
+            },
+            {
+                title: "1st Runner up",
+                segment: "Project Showcasing Category",
+                event: "IOT Fest 2023",
+                image: "./assets/images/achievements/iot.jpeg"
+            },
+            {
+                title: "2nd Runner up",
+                segment: "Product Design Category",
+                event: "BIM2023",
+                image: "./assets/images/achievements/bim.jpeg"
+            }
+        ];
+
+        const CERTIFICATION_DATA = [
+            {
+                title: "Mechatronics & PLC (Hi-Tech Technical Training Program)",
+                issuer: "Bangladesh Industrial Technical Assistance Centre (BITAC)",
+                date: "Feb 2025",
+                icon: "fa-microchip",
+                credentialId: "CTZ25/31/50",
+                image: "./assets/images/certificates/plc.jpg"
+            }
+        ];
+
+        const PUBLICATION_DATA = [
+            {
+                title: "A Low-Cost, Ultra Low-Power, and Scalable LoRa-Based Weather Balloon for Atmospheric Monitoring: A Bangladesh Perspective",
+                conference: "11th International Women in Engineering Conference on Electrical and Computer Engineering (WIECON-ECE 2025)",
+                date: "Dec 2025",
+                paperId: "316",
+                authors: "Md. Tanvir Hassan, Md Samiul Islam Mobin, Sourav Karmokar, Dr. Tama Fouzder",
+                link: "#",
+                certImage: "./assets/images/publications/wiecon.jpg"
+            }
+        ];
+
+        const GALLERY_DATA = [
+            { image: "./assets/images/gallery/club_booth.jpg", caption: "Club Booth" },
+            { image: "./assets/images/gallery/club_booth_2.jpg", caption: "Club Booth" },
+            { image: "./assets/images/gallery/club_ifter.jpg", caption: "Club Iftar" },
+            { image: "./assets/images/gallery/club_ifter_2.jpg", caption: "Club Iftar Gathering" },
+            { image: "./assets/images/gallery/club_interview_pannel.jpg", caption: "Interview Panel" },
+            { image: "./assets/images/gallery/club_meeting.jpg", caption: "Club Meeting" },
+            { image: "./assets/images/gallery/club_act.jpg", caption: "Club Activity" },
+            { image: "./assets/images/gallery/competition_MIST.jpg.jpeg", caption: "MIST Competition" },
+            { image: "./assets/images/gallery/conf.jpeg", caption: "Conference" },
+            { image: "./assets/images/gallery/competition_BIM.jpg", caption: "BIM Competition" },
+            { image: "./assets/images/gallery/competition_MIE.jpg", caption: "MIE Competition" },
+            { image: "./assets/images/gallery/comp_org.jpg", caption: "Competition Organizing" },
+            { image: "./assets/images/gallery/achievement.jpeg", caption: "Prize Giving Ceremony" },
+            { image: "./assets/images/gallery/achievement_2.jpeg", caption: "Award Reception" },
+            { image: "./assets/images/gallery/workshop_1.jpg", caption: "Workshop" },
+            { image: "./assets/images/gallery/worshop_2.jpg", caption: "Workshop" },
+            { image: "./assets/images/gallery/workshop_3.jpg", caption: "Workshop" },
+            { image: "./assets/images/gallery/workshop_4.jpg", caption: "Workshop" },
+            { image: "./assets/images/gallery/workshop_5.jpg", caption: "Workshop" },
+            { image: "./assets/images/gallery/workshop_6.jpg", caption: "Workshop" },
+            { image: "./assets/images/gallery/workshop_7.jpg", caption: "Workshop" },
+            { image: "./assets/images/gallery/workshop_8.jpeg", caption: "Workshop" },
+            { image: "./assets/images/gallery/workshop_9.jpeg", caption: "Workshop" },
+            { image: "./assets/images/gallery/workshop_10.jpeg", caption: "Workshop" },
+            { image: "./assets/images/gallery/club_com_1.jpg", caption: "Club Committee" },
+            { image: "./assets/images/gallery/club_com_2.jpg", caption: "Club Committee" },
+            { image: "./assets/images/gallery/club_com_3.jpg", caption: "Club Committee" }
+        ];
+
         const OWNER_EMAIL = "tanvirhassan1201@gmail.com";
         const OWNER_WHATSAPP = "8801878782806";
 
-        // --- Modal Functions ---
+
+        // --- RENDERING FUNCTIONS ---
+
+        function renderProjects() {
+            const container = document.getElementById('project-container');
+            if (!container) return;
+            container.innerHTML = ''; // Clear existing content
+
+            PROJECT_DATA.forEach(project => {
+                const card = document.createElement('div');
+                card.className = "group flex-shrink-0 w-80 md:w-96 snap-center bg-card rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/20 hover:-translate-y-2";
+
+                card.innerHTML = `
+                    <div class="h-64 overflow-hidden relative">
+                         <img src="${project.image}"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x400/1F2937/FFFFFF?text=${encodeURIComponent(project.name)}';"
+                            alt="${project.name}"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                         <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-primary whitespace-nowrap overflow-hidden text-ellipsis">${project.name}</h3>
+                        <p class="text-gray-700 mb-4 text-sm line-clamp-3 h-15">
+                            ${project.shortDescription}
+                        </p>
+                        <a href="#" onclick="showProjectDetails('${project.id}'); return false;"
+                            class="inline-block px-4 py-2 bg-primary text-white font-medium rounded-lg hover:bg-indigo-700 transition duration-300 shadow-md">Details</a>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function renderAchievements() {
+            const container = document.getElementById('achievement-container');
+            if (!container) return;
+            container.innerHTML = '';
+
+            ACHIEVEMENT_DATA.forEach(ach => {
+                const card = document.createElement('div');
+                card.className = "flex-shrink-0 w-80 md:w-96 snap-center group bg-card rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/20 hover:-translate-y-2";
+
+                card.innerHTML = `
+                     <div class="h-64 overflow-hidden relative">
+                        <img src="${ach.image}"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x400/4F46E5/FFFFFF?text=${encodeURIComponent(ach.title)}';"
+                            alt="${ach.title} ${ach.event}"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-bold mb-1 text-primary">${ach.title}</h3>
+                        <p class="text-lg font-semibold text-secondary">${ach.segment}</p>
+                        <p class="text-gray-600">${ach.event}</p>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function renderCertifications() {
+            const container = document.getElementById('certification-container');
+            if (!container) return;
+            container.innerHTML = '';
+
+            CERTIFICATION_DATA.forEach(cert => {
+                const card = document.createElement('div');
+                card.className = "bg-white p-6 rounded-xl shadow-md border border-gray-100 flex items-start gap-4 transition hover:-translate-y-1 hover:shadow-lg";
+                // Image handling logic
+                const btnAction = cert.image ? `onclick="showImageModal('${cert.image}', '${cert.title}')"` : `href="${cert.link}" target="_blank"`;
+                const btnText = cert.image ? 'View Certificate' : 'View Link';
+                const btnIcon = cert.image ? 'fa-eye' : 'fa-external-link-alt';
+
+                card.innerHTML = `
+                    <div class="p-3 bg-indigo-50 text-primary rounded-lg shrink-0">
+                        <i class="fas ${cert.icon || 'fa-certificate'} fa-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-800 leading-tight mb-2">${cert.title}</h3>
+                        <p class="text-sm text-gray-600 mb-1 font-medium">${cert.issuer}</p>
+                        <p class="text-xs text-gray-400 mb-3">${cert.date} &bull; ID: ${cert.credentialId || 'N/A'}</p>
+                        <button ${btnAction} class="px-3 py-1.5 bg-primary text-white text-xs font-bold rounded-lg hover:bg-indigo-700 transition flex items-center gap-2">
+                             <i class="fas ${btnIcon}"></i> ${btnText}
+                        </button>
+                    </div>
+                 `;
+                container.appendChild(card);
+            });
+        }
+
+        function renderPublications() {
+            const container = document.getElementById('publication-container');
+            if (!container) return;
+            container.innerHTML = '';
+
+            PUBLICATION_DATA.forEach(pub => {
+                const item = document.createElement('div');
+                item.className = "bg-white p-6 rounded-xl shadow-sm border border-gray-100 transition hover:shadow-md";
+                // Logic to show cert if available, else link
+                const hasCert = pub.certImage ? true : false;
+
+                item.innerHTML = `
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div class="flex-1">
+                             <div class="flex items-center gap-2 mb-2">
+                                <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-bold rounded uppercase">IEEE</span>
+                                <span class="text-sm text-gray-500">${pub.date}</span>
+                             </div>
+                             <h3 class="text-xl font-bold text-gray-800 mb-2 leading-tight">
+                                <a href="${pub.link}" class="hover:text-primary transition">${pub.title}</a>
+                             </h3>
+                             <p class="text-sm text-gray-600 italic mb-3">${pub.conference}</p>
+                             <p class="text-sm text-gray-700"><span class="font-semibold">Authors:</span> ${pub.authors}</p>
+                        </div>
+                        <div class="shrink-0 flex flex-col gap-2">
+                             ${pub.link && pub.link !== '#' ? `
+                                <a href="${pub.link}" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-primary text-primary font-medium rounded-lg hover:bg-indigo-50 transition w-full md:w-auto">
+                                    Read Paper
+                                </a>` : ''}
+                             ${hasCert ? `
+                                <button onclick="showImageModal('${pub.certImage}', 'Certificate of Appreciation')" class="inline-flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 font-medium rounded-lg hover:bg-gray-200 transition w-full md:w-auto">
+                                    <i class="fas fa-certificate mr-2"></i> Certificate
+                                </button>` : ''}
+                        </div>
+                    </div>
+                 `;
+                container.appendChild(item);
+            });
+        }
+
+        function renderGallery() {
+            const container = document.getElementById('gallery-container');
+            if (!container) return;
+            container.innerHTML = '';
+
+            GALLERY_DATA.forEach(item => {
+                const card = document.createElement('div');
+                // w-[calc(100%-1rem)] sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)]
+                // Using approx 320px width or flex basis logic can work, but for fixed 4:
+                // Let's use specific widths to ensure 4 fit nicely in 7xl (1280px). 
+                // 1280 / 4 = 320px. Minus gaps.
+                card.className = "flex-shrink-0 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)] snap-start group relative overflow-hidden rounded-xl shadow-md cursor-pointer h-64 border border-gray-100";
+                card.onclick = () => showImageModal(item.image, item.caption);
+
+                card.innerHTML = `
+                    <img src="${item.image}" alt="${item.caption}" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300 flex items-end p-4">
+                        <p class="text-white font-semibold transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300 drop-shadow-md">
+                            ${item.caption}
+                        </p>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+
+        // --- MODAL FUNCTIONALITY ---
+
         function showProjectDetails(id) {
-            const project = PROJECT_DATA[id];
+            const project = PROJECT_DATA.find(p => p.id === id);
             const modal = document.getElementById('projectModal');
             const content = document.getElementById('modalContent');
-            
+
             if (!project) {
                 console.error("Project ID not found:", id);
                 return;
             }
 
-            // Generate HTML for the modal content
+            // --- FURNISHED MODAL DESIGN ---
             content.innerHTML = `
-                <div class="p-6 sm:p-10">
-                    <div class="mb-6">
-                        <h2 class="text-4xl font-extrabold text-secondary mb-2">${project.name}</h2>
-                        <div class="text-gray-600">
-                            <span class="font-semibold">Technology Stack:</span> 
-                            ${project.tech.join(' | ')}
+                <div class="relative bg-white min-h-full pb-10">
+                    <!-- Hero / Banner Image (Mobile only or Top banner style) -->
+                     <div class="h-48 md:h-80 w-full relative overflow-hidden group">
+                        <img src="${project.image}" class="w-full h-full object-cover object-center transition duration-700 group-hover:scale-105" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/800x400/1F2937/FFFFFF?text=Project+Cover';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6 md:p-10 w-full">
+                            <h2 class="text-3xl md:text-5xl font-extrabold text-white drop-shadow-lg mb-2">
+                                ${project.name}
+                            </h2>
+                            <div class="flex flex-wrap gap-2 mt-3 block md:hidden">
+                                <!-- Tech pills hidden on desktop title, shown here on mobile if desired, or can be removed -->
+                            </div>
                         </div>
                     </div>
-                    
-                    <!-- Full Description & Image Section -->
-                    <h3 class="text-2xl font-bold text-primary mb-3">Elaborate Details</h3>
-                    
-                    <!-- Project Image (Limited width, full view, centered with caption) -->
-                    <figure class="my-8 max-w-xl mx-auto">
-                        <img src="${project.image}" onerror="this.onerror=null;this.src='https://placehold.co/800x400/1F2937/FFFFFF?text=Project+Image';" 
-                             alt="${project.name}" class="w-full h-auto object-contain rounded-lg shadow-lg border border-gray-300">
-                        <figcaption class="text-center text-sm text-gray-500 mt-2">Fig: Project Photo</figcaption>
-                    </figure>
-                    
-                    <p class="text-gray-700 leading-relaxed mb-8">${project.details}</p>
 
-                    <!-- Conditional Schematic Section -->
-                    ${project.schematic ? `
-                        <h3 class="text-2xl font-bold text-primary mb-3 mt-10">Project Schematic</h3>
-                        <figure class="my-8 max-w-2xl mx-auto">
-                            <img src="${project.schematic}" onerror="this.onerror=null;this.src='https://placehold.co/800x600/FF0000/FFFFFF?text=Schematic+Not+Found';" 
-                                 alt="${project.name} Schematic" class="w-full h-auto object-contain rounded-lg shadow-lg border border-gray-300">
-                            <figcaption class="text-center text-sm text-gray-500 mt-2">Fig: Schematic Diagram</figcaption>
-                        </figure>
-                    ` : ''}
+                    <div class="p-6 md:p-10 max-w-5xl mx-auto -mt-6 relative z-10">
+                        
+                        <!-- Content Grid -->
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
+                            
+                            <!-- Main Description Column -->
+                            <div class="lg:col-span-2 space-y-8">
+                                
+                                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8">
+                                    <h3 class="text-xl md:text-2xl font-bold text-gray-800 border-b border-gray-100 pb-4 mb-6 relative">
+                                        <span class="relative z-10 border-b-2 border-primary pb-4">Project Overview</span>
+                                    </h3>
+                                    <div class="prose prose-lg text-gray-600 leading-relaxed text-justify max-w-none">
+                                        ${project.details.replace(/\n/g, '<br>')}
+                                    </div>
+                                </div>
+                                
+                                ${project.schematic ? `
+                                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8">
+                                        <h3 class="text-xl md:text-2xl font-bold text-gray-800 border-b border-gray-100 pb-4 mb-6 relative">
+                                            <span class="relative z-10 border-b-2 border-primary pb-4">Technical Schematic</span>
+                                        </h3>
+                                        <div class="rounded-lg overflow-hidden shadow-inner bg-gray-50 border border-gray-200">
+                                            <img src="${project.schematic}" alt="Schematic" 
+                                                 class="w-full h-auto object-contain cursor-zoom-in hover:opacity-95 transition" 
+                                                 onclick="window.open(this.src, '_blank')">
+                                        </div>
+                                        <p class="text-xs text-gray-400 mt-3 text-center flex items-center justify-center gap-1">
+                                            <i class="fas fa-search-plus"></i> Tap image to view full size
+                                        </p>
+                                    </div>
+                                ` : ''}
 
-                    <!-- Key Terms & Technologies -->
-                    <h3 class="text-2xl font-bold text-primary mb-3 mt-10">Key Concepts</h3>
-                    <div class="flex flex-wrap gap-2">
-                        ${project.keywords.map(keyword => 
-                            `<span class="px-3 py-1 bg-gray-200 text-secondary text-sm font-medium rounded-full">${keyword}</span>`
-                        ).join('')}
-                    </div>
+                                <!-- Back Button -->
+                                <button onclick="closeModal()" class="w-full py-4 bg-gray-100 text-gray-700 font-bold rounded-xl hover:bg-gray-200 transition duration-300 flex items-center justify-center gap-2">
+                                    <i class="fas fa-arrow-left"></i> Back to Projects
+                                </button>
+                            </div>
 
-                    <div class="mt-10 pt-6 border-t border-gray-200">
-                        <a href="[Project GitHub URL]" target="_blank" class="text-primary hover:text-indigo-800 font-medium text-lg">
-                            <i class="fab fa-github mr-2"></i> View Project Code on GitHub &rarr;
-                        </a>
+                            <!-- Sidebar / Actions -->
+                            <div class="lg:col-span-1 space-y-6">
+                                
+                                <!-- Updated Sidebar Card -->
+                                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 sticky top-6">
+                                    
+                                    <div class="mb-6">
+                                        <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">Position</h4>
+                                        <p class="text-gray-800 font-bold text-lg flex items-center gap-2">
+                                            <i class="fas fa-user-tag text-primary opacity-80"></i>
+                                            ${project.role || 'Project Lead'}
+                                        </p>
+                                    </div>
+
+                                    <div class="mb-8">
+                                        <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Worked with</h4>
+                                        <div class="flex flex-wrap gap-2">
+                                             ${project.tech.map(tech =>
+                `<span class="px-3 py-1 bg-indigo-50 text-indigo-700 text-sm font-medium rounded-lg border border-indigo-100 hover:bg-indigo-100 transition cursor-default">${tech}</span>`
+            ).join('')}
+                                        </div>
+                                    </div>
+
+                                    <a href="${project.github}" target="_blank" 
+                                       class="block w-full text-center py-4 px-6 bg-gray-900 hover:bg-black text-white font-bold rounded-xl transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-3 group">
+                                        <i class="fab fa-github fa-lg group-hover:rotate-12 transition duration-300"></i> 
+                                        <span>View Source Code</span>
+                                    </a>
+                                </div>
+                            
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             `;
 
-            // Show the modal
             modal.classList.remove('is-modal-hidden');
             modal.classList.add('is-modal-active');
-            
-            // Optionally prevent body scrolling when modal is open
             document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
             const modal = document.getElementById('projectModal');
             modal.classList.remove('is-modal-active');
-            modal.classList.add('is-modal-hidden'); // Apply hidden class
-            document.body.style.overflow = ''; // Restore body scrolling
+            modal.classList.add('is-modal-hidden');
+            document.body.style.overflow = '';
         }
 
-
-        // --- Contact Form Functionality ---
+        // --- CONTACT FORM ---
         function handleContactSubmit(event) {
             event.preventDefault();
 
@@ -642,99 +1026,149 @@
             const message = document.getElementById('messageContent').value;
             const statusMessage = document.getElementById('statusMessage');
 
-            // Set processing status
             statusMessage.textContent = "Processing...";
             statusMessage.classList.remove('text-red-300', 'text-green-300');
 
-
-            // 1. Construct Email (Mailto) Link
-            const emailSubject = encodeURIComponent(`Message from Portfolio Contact Form (Sender: ${name})`);
+            const emailSubject = encodeURIComponent(`Message from Portfolio (Sender: ${name})`);
             const emailBody = encodeURIComponent(`Sender Name: ${name}\nSender Email: ${email}\n\nMessage:\n${message}`);
             const mailtoLink = `mailto:${OWNER_EMAIL}?subject=${emailSubject}&body=${emailBody}`;
 
-            // 2. Construct WhatsApp Link
             const whatsappBody = `Hello Md. Tanvir Hassan,\nI saw your portfolio.\n\nFrom: ${name} (${email})\n\nMessage Preview:\n${message.substring(0, 100)}${message.length > 100 ? '...' : ''}`;
             const whatsappText = encodeURIComponent(whatsappBody);
-            // Replace all non-numeric characters from the number for the wa.me link
-            const cleanWhatsappNumber = OWNER_WHATSAPP.replace(/[^0-9]/g, ''); 
+            const cleanWhatsappNumber = OWNER_WHATSAPP.replace(/[^0-9]/g, '');
             const whatsappLink = `https://wa.me/${cleanWhatsappNumber}?text=${whatsappText}`;
 
             try {
-                // Open both links in new tabs/windows
                 window.open(mailtoLink, '_blank');
                 window.open(whatsappLink, '_blank');
-
-                statusMessage.textContent = "✅ Success! Two new windows have opened: one for Email and one for WhatsApp. Please send your message from there.";
+                statusMessage.textContent = "✅ Success! Links opened for Email and WhatsApp.";
                 statusMessage.classList.remove('text-red-300');
                 statusMessage.classList.add('text-green-300');
-
-                // Clear form after successful attempt
                 document.getElementById('contactForm').reset();
             } catch (error) {
-                console.error("Error opening contact links:", error);
-                statusMessage.textContent = "❌ Error: Could not open communication links. Check your pop-up blocker.";
+                console.error("Error opening links:", error);
+                statusMessage.textContent = "❌ Error: Could not open links. Check pop-up blocker.";
                 statusMessage.classList.add('text-red-300');
                 statusMessage.classList.remove('text-green-300');
             }
         }
-        
-        // --- Project Scroll Functionality ---
-        const projectContainer = document.getElementById('project-container');
-        const leftArrow = document.getElementById('leftArrow');
-        const rightArrow = document.getElementById('rightArrow');
 
-        // Function to check and update arrow visibility
-        function checkScrollPosition() {
-            if (!projectContainer || !leftArrow || !rightArrow) return;
-            
-            const scrollLeft = projectContainer.scrollLeft;
-            // Calculate maximum scroll position (within a small tolerance for floating point errors)
-            const maxScroll = projectContainer.scrollWidth - projectContainer.clientWidth;
-            
-            // Hide left arrow if at the beginning
-            if (scrollLeft <= 5) { // Use a small tolerance like 5px
-                leftArrow.style.opacity = '0';
-                leftArrow.style.pointerEvents = 'none';
-            } else {
-                leftArrow.style.opacity = '1';
-                leftArrow.style.pointerEvents = 'auto';
+        // --- SCROLL LOGIC ---
+
+        function setupAutoScroll(containerId, intervalTime = 3000) {
+            const container = document.getElementById(containerId);
+            if (!container) return; // Might happen if render failed or ID wrong
+
+            let intervalId;
+
+            function start() {
+                clearInterval(intervalId); // Prevent duplicates
+                intervalId = setInterval(() => {
+                    // Check if scrolled to near end
+                    if (container.scrollLeft >= (container.scrollWidth - container.clientWidth - 10)) {
+                        container.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        container.scrollBy({ left: 320, behavior: 'smooth' });
+                    }
+                }, intervalTime);
             }
 
-            // Hide right arrow if at the end (using Math.ceil for accurate comparison)
-            if (Math.ceil(scrollLeft) >= maxScroll - 5) { 
-                rightArrow.style.opacity = '0';
-                rightArrow.style.pointerEvents = 'none';
-            } else {
-                rightArrow.style.opacity = '1';
-                rightArrow.style.pointerEvents = 'auto';
+            function stop() {
+                clearInterval(intervalId);
             }
+
+            start();
+            container.addEventListener('mouseenter', stop);
+            container.addEventListener('touchstart', stop); // Mobile touch
+            container.addEventListener('mouseleave', start);
+            container.addEventListener('touchend', start);
         }
 
-        function scrollProjects(direction) {
-            // Scroll by a calculated distance (approximately the width of one card + margin)
-            const scrollDistance = projectContainer.offsetWidth * 0.8; 
-            
-            projectContainer.scrollBy({
-                left: direction * scrollDistance,
-                behavior: 'smooth'
+        // Shared Arrow Logic
+        function updateArrows(containerId, leftBtnId, rightBtnId) {
+            const container = document.getElementById(containerId);
+            const leftBtn = document.getElementById(leftBtnId);
+            const rightBtn = document.getElementById(rightBtnId);
+
+            if (!container || !leftBtn || !rightBtn) return;
+
+            const check = () => {
+                const maxScroll = container.scrollWidth - container.clientWidth;
+                leftBtn.style.opacity = container.scrollLeft <= 10 ? '0' : '1';
+                leftBtn.style.pointerEvents = container.scrollLeft <= 10 ? 'none' : 'auto';
+
+                rightBtn.style.opacity = container.scrollLeft >= maxScroll - 10 ? '0' : '1';
+                rightBtn.style.pointerEvents = container.scrollLeft >= maxScroll - 10 ? 'none' : 'auto';
+            };
+
+            container.addEventListener('scroll', check);
+            window.addEventListener('resize', check);
+            check(); // Initial check
+        }
+
+        // Manual Scroll Helper
+        window.scrollContainer = function (containerId, direction) {
+            const container = document.getElementById(containerId);
+            if (container) {
+                const amount = container.clientWidth * 0.8;
+                container.scrollBy({ left: direction * amount, behavior: 'smooth' });
+            }
+        };
+
+        // --- INITIALIZATION ---
+
+        window.addEventListener('DOMContentLoaded', () => {
+            // 1. Render Content
+            renderProjects();
+            renderAchievements();
+            renderCertifications();
+            renderPublications();
+            renderGallery();
+
+            // 2. Setup Auto-Scroll
+            setupAutoScroll('project-container', 4000);
+            setupAutoScroll('achievement-container', 5000);
+            setupAutoScroll('gallery-container', 3000);
+
+            // 3. Setup Arrows
+            updateArrows('project-container', 'leftArrow', 'rightArrow');
+            updateArrows('achievement-container', 'achLeftArrow', 'achRightArrow');
+            updateArrows('gallery-container', 'galleryLeftArrow', 'galleryRightArrow');
+
+            // 4. Click outside to close (Alternative to window.onclick)
+            document.getElementById('projectModal').addEventListener('click', (e) => {
+                if (e.target === e.currentTarget) closeModal();
             });
-            
-            // Check scroll position shortly after the scroll animation starts
-            setTimeout(checkScrollPosition, 300); 
+            document.getElementById('imageModal').addEventListener('click', (e) => {
+                if (e.target === e.currentTarget && e.target.id === 'imageModal') closeImageModal(); // Check ID to be safe
+            });
+        });
+
+        // Global Wrappers for Buttons
+        window.scrollProjects = (dir) => window.scrollContainer('project-container', dir);
+        window.scrollAchievements = (dir) => window.scrollContainer('achievement-container', dir);
+        window.scrollGallery = (dir) => window.scrollContainer('gallery-container', dir);
+
+        // --- IMAGE MODAL LOGIC ---
+        function showImageModal(src, caption) {
+            const modal = document.getElementById('imageModal');
+            const img = document.getElementById('modalImage');
+            const cap = document.getElementById('modalCaption');
+
+            img.src = src;
+            cap.textContent = caption || '';
+            modal.classList.remove('is-modal-hidden');
+            modal.classList.add('is-modal-active');
+            document.body.style.overflow = 'hidden';
         }
 
-        // Event Listeners: Initialize check and attach scroll listener
-        if (projectContainer) {
-            // Initial check on load and resize
-            window.addEventListener('load', checkScrollPosition);
-            window.addEventListener('resize', checkScrollPosition);
-            
-            // Check visibility whenever the user scrolls the container manually
-            projectContainer.addEventListener('scroll', checkScrollPosition);
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('is-modal-active');
+            modal.classList.add('is-modal-hidden');
+            document.body.style.overflow = '';
         }
     </script>
 </body>
+
 </html>
-
-
-
